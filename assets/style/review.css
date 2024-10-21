@@ -1,0 +1,16 @@
+/****************************/
+/* STAR RATING */
+/****************************/
+
+.star-rating {
+}
+
+.star {
+	height: 5rem;
+	width: 5rem;
+	fill: black;
+}
+
+.star--checked {
+	fill: aqua;
+}
