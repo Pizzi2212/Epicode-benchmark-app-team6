@@ -1,0 +1,37 @@
+/****************************/
+/* GENERAL */
+/****************************/
+
+body {
+	width: 100%;
+	/* TODO
+	general padding
+	*/
+}
+
+em {
+	/* TODO font-weight bold
+	/* font-weight: ; */
+}
+
+strong {
+	/* TODO change color */
+}
+
+p {
+	/* TODO text formatting */
+}
+
+/****************************/
+/* HEADER */
+/****************************/
+
+.logo {
+}
+
+/****************************/
+/* MAIN */
+/****************************/
+
+.btn--fluo {
+}
