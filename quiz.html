@@ -1,33 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Epicode Benchmark &mdash; Quiz</title>
-  </head>
-  <body>
-    <header>
-      <img
-        src=""
-        alt="Epicode logo"
-      />
-      <h2>Epicode</h2>
-    </header>
-    <main>
-      <p>&nbsp; 
-        <!-- domanda del quiz -->
-      </p>
-      <div>
-        <!-- timer -->
-        &nbsp;
-      </div>
-      <form>
-        <button>Confirm</button>
-      </form>
-      <p>Question</p>
-    </main>
-    <footer>
-
-    </footer>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="" />
+		<title>Epicode Benchmark &mdash; Quiz</title>
+	</head>
+	<body>
+		<header>
+			<img src="" alt="Epicode Logo" />
+		</header>
+		<main>
+			<div class="scene-quiz">
+				<p id="question" class="question">&nbsp;</p>
+				<div id="timer" class="timer">
+					<p>SECONDS</p>
+					<p id="seconds">&nbsp;</p>
+					<p>REMAINING</p>
+				</div>
+				<div id="answers-container" class="answers-container">&nbsp;</div>
+				<form>
+					<button class="btn-fluo" type="submit">Confirm</button>
+				</form>
+				<p class="question-counter">
+					Question
+					<span id="question-counter">1</span>
+					<strong>
+						/
+						<span class="total-question">10</span>
+					</strong>
+				</p>
+			</div>
+			<div class="scene-results">
+				<div>
+					<h2>Results</h2>
+					<p>The summary of your answers:</p>
+				</div>
+				<article class="results-container">
+					<section class="answer-stat answer-stat--correct">
+						<h4>Correct</h4>
+						<p>
+							<em>
+								<span id="correct">&nbsp;</span>
+								%
+							</em>
+						</p>
+						<p>
+							<span id="count-correct">&nbsp;</span>
+							/
+							<span class="total-question">&nbsp;</span>
+							questions
+						</p>
+					</section>
+					<section class="answer-graphics">
+						<div class="feedback">
+							<p class="feedback-title">Congratulazions!</p>
+							<p class="is-passed is-passed--passed">You passed the exam.</p>
+							<p class="description">
+								We'll send you the certificate in few minutes Check your email
+								(including promotions / spam folder)
+							</p>
+						</div>
+						<div class="feedback hide">
+							<p class="feedback-title">Congratulazions!</p>
+							<p class="is-passed is-passed--not">
+								You didn't passed the exam.
+							</p>
+							<p class="description">
+								<!-- TODO  -->
+								Try again buddy.
+							</p>
+						</div>
+					</section>
+					<section class="answer-stat answer-stat--wrong">
+						<h4>Correct</h4>
+						<p>
+							<em>
+								<span id="wrong">&nbsp;</span>
+								%
+							</em>
+						</p>
+						<p>
+							<span id="count-wrong">&nbsp;</span>
+							/
+							<span class="total-question">&nbsp;</span>
+							questions
+						</p>
+					</section>
+				</article>
+				<div>
+					<form action="">
+						<button class="btn btn--hollow" type="submit">RATE US</button>
+					</form>
+				</div>
+			</div>
+		</main>
+		<footer>&nbsp;</footer>
+	</body>
 </html>
