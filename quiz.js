@@ -4,7 +4,7 @@ const questions = [
 	{
 		category: "Science: Computers",
 		type: "multiple",
-		difficulty: "easy",
+		difficulty: "medium",
 		question: "What does CPU stand for?",
 		correct_answer: "Central Processing Unit",
 		incorrect_answers: [
@@ -16,7 +16,7 @@ const questions = [
 	{
 		category: "Science: Computers",
 		type: "multiple",
-		difficulty: "easy",
+		difficulty: "hard",
 		question:
 			"In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
 		correct_answer: "Final",
@@ -25,7 +25,7 @@ const questions = [
 	{
 		category: "Science: Computers",
 		type: "boolean",
-		difficulty: "easy",
+		difficulty: "medium",
 		question: "The logo for Snapchat is a Bell.",
 		correct_answer: "False",
 		incorrect_answers: ["True"],
@@ -33,7 +33,7 @@ const questions = [
 	{
 		category: "Science: Computers",
 		type: "boolean",
-		difficulty: "easy",
+		difficulty: "hard",
 		question:
 			"Pointers were not used in the original C programming language; they were added later on in C++.",
 		correct_answer: "False",
@@ -96,13 +96,72 @@ const questions = [
 	},
 ];
 
+const timer = {
+	duration: undefined,
+	timeLeft: undefined,
+	timerInterval: undefined,
+	radius: undefined,
+	circumference: undefined,
+
+	htmlElements: {
+		circle: document.querySelector(".foreground-circle"),
+		timeDisplay: document.getElementById("time"),
+		startButton: document.getElementById("start-btn"),
+	},
+
+	startTimerLister(e, self) {
+		e.preventDefault();
+		self.startTimer();
+	},
+
+	updateTimer(self) {
+		// Update the text display
+		self.htmlElements.timeDisplay.textContent = self.timeLeft;
+
+		// Stop when the timer reaches 0
+		if (self.timeLeft <= 1) clearInterval(self.timerInterval);
+
+		// Calculate how much of the circle should be visible
+		self.htmlElements.circle.style.strokeDashoffset =
+			self.circumference -
+			((self.timeLeft - 1) / self.duration) * self.circumference;
+
+		self.timeLeft--;
+	},
+
+	startTimer() {
+		this.timeLeft = this.duration; // Reset the time left
+		this.htmlElements.circle.style.strokeDashoffset = 0; // Reset the circle
+		this.htmlElements.timeDisplay.textContent = this.timeLeft; // Reset the time display
+
+		// Start the countdown
+		this.timerInterval = setInterval(() => this.updateTimer(this), 1000);
+	},
+
+	init(duration) {
+		this.duration = duration;
+		this.timeLeft = duration;
+
+		// Set the circumference of the circle (2 * Math.PI * radius)
+		this.radius = this.htmlElements.circle.r.baseVal.value;
+		this.circumference = 2 * Math.PI * this.radius;
+
+		// Initial stroke dash offset
+		this.htmlElements.circle.style.strokeDasharray = this.circumference;
+		this.htmlElements.circle.style.strokeDashoffset = 0;
+	},
+};
+
 const quiz = {
-	htmlElements: {},
+	htmlElements: {
+		confirmButton: document.getElementById("confirm"),
+	},
 	activeQuestions: undefined,
 	activeQuestion: undefined,
 	points: 0,
-	questions,
-    numberOfQuestion : 5,
+	questions: [...questions],
+	numberOfQuestion: 5,
+	timer,
 	// LISTENERS
 
 	singleQuestionListener() {},
@@ -119,31 +178,64 @@ const quiz = {
 
 	// LOGIC
 
-
 	selectQuestions(difficulty = "all") {
-		const randomQuest = []
-		const duplicateQuest = []
-       for (let i = 0; randomQuest.length<this.numberOfQuestion;i++){
-		const random = Math.floor(Math.random()*questions.length)
-	 if (randomQuest.includes(questions[random])){
-		duplicateQuest.push(questions[random])
-	 }else {
-		randomQuest.push(questions[random])
-	 }
-	   }console.log(randomQuest)
-	   return randomQuest
+		const randomQuest = [];
+		const duplicateQuest = [];
+		for (let i = 0; randomQuest.length < this.numberOfQuestion; i++) {
+			const random = Math.floor(Math.random() * questions.length);
+			if (randomQuest.includes(questions[random])) {
+				duplicateQuest.push(questions[random]);
+			} else {
+				randomQuest.push(questions[random]);
+			}
+		}
+		console.log(randomQuest);
+		return randomQuest;
+	},
+
+	selectQuestionsMaybe(difficulty = "all") {
+		const filterAll = () => true;
+
+		const filterEasy = element => element.difficulty === "easy";
+
+		const getFilterByDifficulty = () => {
+			switch (difficulty) {
+				case "easy":
+					return filterEasy;
+				case "all":
+				default:
+					return filterAll;
+			}
+		};
+
+		const getRandomElements = (array, itemsLeft) => {
+			if (!itemsLeft) return [];
+			const index = Math.floor(Math.random() * array.length);
+			return [
+				array[index],
+				...getRandomElements(
+					array.filter(el => el !== array[index]),
+					itemsLeft - 1,
+				),
+			];
+		};
+
+		this.activeQuestions = getRandomElements(
+			this.questions.filter(getFilterByDifficulty()),
+			this.numberOfQuestion,
+		);
 	},
 
 	buildQuestion(question) {
-		this.selectQuestions()
-		const currentQuestion = document.getElementById("question")
-		const answerContainer = document.getElementById("answers-container")
-		const answers = []
-       for (let i = 0;i<questions.length;i++){
-		answers.push(questions[i].correct_answer)
-		answers.push(questions[i].incorrect_answers)
-	   }console.log(answers)
-		
+		this.selectQuestions();
+		const currentQuestion = document.getElementById("question");
+		const answerContainer = document.getElementById("answers-container");
+		const answers = [];
+		for (let i = 0; i < questions.length; i++) {
+			answers.push(questions[i].correct_answer);
+			answers.push(questions[i].incorrect_answers);
+		}
+		console.log(answers);
 	},
 
 	deleteQuestion(question) {},
@@ -153,10 +245,14 @@ const quiz = {
 	},
 
 	start() {
-		 this.activeQuestion = this.selectQuestions()
-		 
+		this.timer.init(10);
+		// this.activeQuestion = this.selectQuestions();
+		this.selectQuestionsMaybe();
+		// console.log(this.activeQuestions);
+		this.htmlElements.confirmButton.addEventListener("click", e => {
+			this.timer.startTimerLister(e, this.timer);
+		});
 	},
 };
 
-
-quiz.start()
+quiz.start();
