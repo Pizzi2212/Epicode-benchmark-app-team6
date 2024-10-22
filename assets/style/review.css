@@ -23,6 +23,7 @@
 	fill: aqua; /* Colore per le stelle selezionate */
 }
 
+.star:hover,
 .star:hover ~ .star {
 	fill: aqua; /* Colore al passaggio del mouse */
 }
