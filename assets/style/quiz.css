@@ -2,11 +2,19 @@
 /* TIMER */
 /****************************/
 
-
-
-
 .timer {
+    position: absolute;
+     top: 6rem; 
+    right: 20rem;
+    font-size: 12px; 
     
+}
+      
+#seconds {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 /****************************/
@@ -14,15 +22,46 @@
 /****************************/
 
 .question {
-    margin-top: 16rem;
+    margin-top: 10rem;
     text-align: center;
     font-size: 4rem;
     color: white;
 }
 
+.question > strong {
+    color: white;
+    font-weight: bold;
+    
+}
+
 /****************************/
 /* ANWERS */
 /****************************/
+
+#answers-container{
+   text-align: center;
+   margin-top: 7rem;
+}
+
+#answers-container>p{
+display: inline-block; 
+ margin-top: 2rem;     
+ background-color: #2C2957;
+ border: 2px solid white;
+  color: white;
+  padding: 15px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn--fluo{
+    width: 220px;
+	height: 60px;
+	font-size: 21px;
+	font-weight: bold;
+    text-align: center;
+}
 
 .btn-answer {
 }
@@ -35,6 +74,7 @@
 /****************************/
 
 .question-counter {
+    text-align: center;
 }
 
 /****************************/
