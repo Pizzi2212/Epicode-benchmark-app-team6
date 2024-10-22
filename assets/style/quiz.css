@@ -4,51 +4,56 @@
 
 .timer {
 	position: absolute;
-	top: 6rem;
-	right: 20rem;
-	font-size: 12px;
+	top: 4.8rem;
+	right: 4.8rem;
+	width: 9rem;
+	height: 9rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-#seconds {
-	text-align: center;
-	font-size: 4rem;
-	margin-top: 3px;
-	margin-bottom: 3px;
+.circle {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border-radius: 200rem;
+	background: conic-gradient(
+		#d20094 0%,
+		#d20094 calc(var(--percentage) * 1%),
+		transparent 0 100%
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.timer-container {
-	position: absolute;
-	top: 6rem;
-	right: 20rem;
-}
-
-.timer-svg {
-	/* Rotates to make the stroke decrease counterclockwise */
-	transform: rotate(-90deg);
-}
-
-.background-circle {
-	fill: none;
-	stroke: #e6e6e6;
-	stroke-width: 10;
-}
-
-.foreground-circle {
-	fill: none;
-	stroke-width: 10;
-	stroke-linecap: round;
-	stroke-dasharray: 282.6; /* 2 * Math.PI * r (r = 45) */
-	stroke-dashoffset: 0;
-	transition: stroke-dashoffset 1s linear;
-}
-
-.time-display {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 24px;
+.time {
+	height: 7.2rem;
+	width: 7.2rem;
+	font-size: 2.4rem;
 	font-weight: bold;
+	background-color: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 200px;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.pulse {
+	animation: pulse 1s infinite;
 }
 
 /****************************/
