@@ -23,7 +23,7 @@
 }
 
 .star:hover {
-	fill: lightblue; /* Colore al passaggio del mouse */
+	fill: aqua; /* Colore al passaggio del mouse */
 }
 form {
 	margin-top: 2rem;
