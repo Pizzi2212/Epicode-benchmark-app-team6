@@ -5,10 +5,10 @@
 body {
 	width: 100%;
 	height: 100vh;
-	padding: 50px 100px 50px 100px;
-	background-image: url(../images/bg.jpg);
+	padding: 50px 100px;
+	background-image: url(./../images/bg.jpg);
 	background-size: cover;
-	font-family: Inter;
+	font-family: "Inter", sans-serif;
 	color: white;
 }
 
@@ -21,7 +21,6 @@ strong {
 }
 
 p {
-	font-family: Inter;
 }
 
 .hide {
