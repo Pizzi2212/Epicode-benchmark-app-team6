@@ -179,49 +179,42 @@ const quiz = {
 	// LOGIC
 
 	selectQuestions(difficulty = "all") {
-		const randomQuest = [];
-		const duplicateQuest = [];
-		for (let i = 0; randomQuest.length < this.numberOfQuestion; i++) {
-			const random = Math.floor(Math.random() * questions.length);
-			if (randomQuest.includes(questions[random])) {
-				duplicateQuest.push(questions[random]);
-			} else {
-				randomQuest.push(questions[random]);
-			}
-		}
-		console.log(randomQuest);
-		return randomQuest;
-	},
-
-	selectQuestionsMaybe(difficulty = "all") {
 		const filterAll = () => true;
-
-		const filterEasy = element => element.difficulty === "easy";
+		const filterEasy = question => question.difficulty === "easy";
+		const filterMedium = question => question.difficulty === "medium";
+		const filterHard = question => question.difficulty === "hard";
+		const filterEasyMedium = question =>
+			filterEasy(question) || filterMedium(question);
 
 		const getFilterByDifficulty = () => {
 			switch (difficulty) {
 				case "easy":
 					return filterEasy;
+				case "medium":
+					return filterMedium;
+				case "hard":
+					return filterHard;
+				case "easymedium":
+					return filterEasyMedium;
 				case "all":
 				default:
 					return filterAll;
 			}
 		};
-
-		const getRandomElements = (array, itemsLeft) => {
-			if (!itemsLeft) return [];
-			const index = Math.floor(Math.random() * array.length);
+		const getRandomElements = (array, numberElements) => {
+			if (numberElements === 0) return [];
+			const randomIndex = Math.floor(Math.random() * array.length);
 			return [
-				array[index],
+				array[randomIndex],
 				...getRandomElements(
-					array.filter(el => el !== array[index]),
-					itemsLeft - 1,
+					array.filter(element => element !== array[randomIndex]),
+					numberElements - 1,
 				),
 			];
 		};
-
+		const availableQuestion = this.questions.filter(getFilterByDifficulty());
 		this.activeQuestions = getRandomElements(
-			this.questions.filter(getFilterByDifficulty()),
+			availableQuestion,
 			this.numberOfQuestion,
 		);
 	},
@@ -235,7 +228,6 @@ const quiz = {
 			answers.push(questions[i].correct_answer);
 			answers.push(questions[i].incorrect_answers);
 		}
-		console.log(answers);
 	},
 
 	deleteQuestion(question) {},
@@ -247,8 +239,8 @@ const quiz = {
 	start() {
 		this.timer.init(10);
 		// this.activeQuestion = this.selectQuestions();
-		this.selectQuestionsMaybe();
-		// console.log(this.activeQuestions);
+		this.selectQuestions("hard");
+		console.log(this.activeQuestions);
 		this.htmlElements.confirmButton.addEventListener("click", e => {
 			this.timer.startTimerLister(e, this.timer);
 		});
