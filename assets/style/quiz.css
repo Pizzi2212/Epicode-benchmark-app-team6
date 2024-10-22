@@ -16,6 +16,41 @@
 	margin-bottom: 3px;
 }
 
+.timer-container {
+	position: absolute;
+	top: 6rem;
+	right: 20rem;
+}
+
+.timer-svg {
+	/* Rotates to make the stroke decrease counterclockwise */
+	transform: rotate(-90deg);
+}
+
+.background-circle {
+	fill: none;
+	stroke: #e6e6e6;
+	stroke-width: 10;
+}
+
+.foreground-circle {
+	fill: none;
+	stroke-width: 10;
+	stroke-linecap: round;
+	stroke-dasharray: 282.6; /* 2 * Math.PI * r (r = 45) */
+	stroke-dashoffset: 0;
+	transition: stroke-dashoffset 1s linear;
+}
+
+.time-display {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 24px;
+	font-weight: bold;
+}
+
 /****************************/
 /* MAIN */
 /****************************/
