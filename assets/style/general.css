@@ -4,22 +4,23 @@
 
 body {
 	width: 100%;
-	/* TODO
-	general padding
-	*/
+	height: 100vh;
+	padding: 50px 100px;
+	background-image: url(./../images/bg.jpg);
+	background-size: cover;
+	font-family: "Inter", sans-serif;
+	color: white;
 }
 
 em {
-	/* TODO font-weight bold
-	/* font-weight: ; */
+	font-weight: bold;
 }
 
 strong {
-	/* TODO change color */
+	color: #d20094;
 }
 
 p {
-	/* TODO text formatting */
 }
 
 .hide {
@@ -31,17 +32,24 @@ p {
 /****************************/
 
 .logo {
+	width: 160px;
 }
 
-/****************************/
-/* MAIN */
-/****************************/
-
 .btn {
+	width: 220px;
+	height: 60px;
+	font-size: 21px;
+	font-weight: bold;
 }
 
 .btn--fluo {
+	background-color: #00ffff;
+	border: none;
+	box-shadow: 0px 0px 30px 0px #00ffff;
 }
 
 .btn--hollow {
+	background-color: transparent;
+	border: 2px solid white;
+	color: white;
 }
