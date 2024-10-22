@@ -32,10 +32,16 @@
 		</header>
 		<main class="main-container">
 			<main>
-				<h1 class="title">Welcome to your exam</h1>
-				<h2><strong>Instructions</strong></h2>
+				<h1 class="title">
+					Welcome to
+					<div><em>your exam</em></div>
+				</h1>
+				<h2>
+					<strong><em>Instructions</em></strong>
+				</h2>
 				<p>
 					We don't expect most engineers to know the answers to all of these
+					<br />
 					questions, so don't worry if you're unsure of a few of them.
 				</p>
 				<ul class="rules">
@@ -43,25 +49,23 @@
 						Each question is
 						<em>timed</em>
 						and can only be
-						<em>answered once</em>
-						.
+						<em>answered once.</em>
 					</li>
 					<li>
 						Changing browser tab or opening other windows will
-						<em>invalidate the question</em>
-						.
+						<em>invalidate the question.</em>
 					</li>
 					<li>
 						This exam will take approx.
-						<em>0-5 minutes</em>
-						.
+						<em>0-5 minutes.</em>
 					</li>
 				</ul>
 				<form action="quiz.html">
-					<label for="answer-myself">
-						I promise to answer myself without help from anyon
-					</label>
 					<input type="checkbox" name="" id="answer-myself" required />
+					<i class="far fa-square-full"></i>
+					<label for="answer-myself">
+						I promise to answer myself without help from anyone
+					</label>
 					<button class="btn btn--fluo" type="submit">PROCEED</button>
 				</form>
 			</main>
