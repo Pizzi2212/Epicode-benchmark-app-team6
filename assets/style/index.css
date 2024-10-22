@@ -3,11 +3,47 @@
 /****************************/
 
 .title {
+	font-family: "Outfit";
+	font-size: 5rem;
+	line-height: 0.8;
+	padding-top: 5rem;
+	padding-bottom: 3rem;
 }
 
 /****************************/
 /* MAIN */
 /****************************/
 
+h2 {
+	font-size: 1.8rem;
+	line-height: 1.7;
+}
+
 .rules {
+	padding-top: 3rem;
+	padding-bottom: 4rem;
+	font-size: 1rem;
+	line-height: 1.8;
+	list-style: disc;
+	padding-left: 1.5rem;
+}
+
+form {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+label {
+	margin-right: auto;
+	padding: 1rem;
+}
+
+button {
+	margin-left: auto;
+}
+
+main p {
+	font-size: 1rem;
+	line-height: 1.1;
 }
