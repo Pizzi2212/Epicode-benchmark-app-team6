@@ -3,6 +3,7 @@
 /****************************/
 
 .star-rating {
+	align-items: center;
 }
 
 .star {
