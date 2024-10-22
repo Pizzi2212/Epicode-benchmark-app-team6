@@ -97,58 +97,51 @@ const questions = [
 ];
 
 const timer = {
-	duration: undefined,
-	timeLeft: undefined,
-	timerInterval: undefined,
-	radius: undefined,
-	circumference: undefined,
-
 	htmlElements: {
-		circle: document.querySelector(".foreground-circle"),
+		timerElement: document.getElementById("circle"),
 		timeDisplay: document.getElementById("time"),
-		startButton: document.getElementById("start-btn"),
+	},
+	totalSeconds: 0,
+	currentSeconds: 0,
+	intervalId: null,
+
+	startTimer(self, seconds) {
+		self.totalSeconds = seconds;
+		self.currentSeconds = seconds;
+		self.updateDisplay();
+		self.updateAnimation();
+
+		self.intervalId = setInterval(() => {
+			self.currentSeconds--;
+			self.updateDisplay();
+			self.updateAnimation();
+
+			if (self.currentSeconds <= 5)
+				self.htmlElements.timerElement.classList.add("pulse");
+
+			if (self.currentSeconds <= 0) self.stopTimer(self);
+		}, 1000);
 	},
 
-	startTimerLister(e, self) {
-		e.preventDefault();
-		self.startTimer();
+	stopTimer(self) {
+		clearInterval(self.intervalId);
+		self.intervalId = null;
+		self.htmlElements.timerElement.classList.remove("pulse");
+		// Freeze the CSS animation
+		self.htmlElements.timerElement.style.animationPlayState = "paused";
 	},
 
-	updateTimer(self) {
-		// Update the text display
-		self.htmlElements.timeDisplay.textContent = self.timeLeft;
-
-		// Stop when the timer reaches 0
-		if (self.timeLeft <= 1) clearInterval(self.timerInterval);
-
-		// Calculate how much of the circle should be visible
-		self.htmlElements.circle.style.strokeDashoffset =
-			self.circumference -
-			((self.timeLeft - 1) / self.duration) * self.circumference;
-
-		self.timeLeft--;
+	updateDisplay() {
+		this.htmlElements.timeDisplay.textContent = this.currentSeconds;
 	},
 
-	startTimer() {
-		this.timeLeft = this.duration; // Reset the time left
-		this.htmlElements.circle.style.strokeDashoffset = 0; // Reset the circle
-		this.htmlElements.timeDisplay.textContent = this.timeLeft; // Reset the time display
-
-		// Start the countdown
-		this.timerInterval = setInterval(() => this.updateTimer(this), 1000);
-	},
-
-	init(duration) {
-		this.duration = duration;
-		this.timeLeft = duration;
-
-		// Set the circumference of the circle (2 * Math.PI * radius)
-		this.radius = this.htmlElements.circle.r.baseVal.value;
-		this.circumference = 2 * Math.PI * this.radius;
-
-		// Initial stroke dash offset
-		this.htmlElements.circle.style.strokeDasharray = this.circumference;
-		this.htmlElements.circle.style.strokeDashoffset = 0;
+	updateAnimation() {
+		const percentage = (this.currentSeconds / this.totalSeconds) * 100;
+		this.htmlElements.timerElement.style.setProperty(
+			"--percentage",
+			percentage, // 100 - percentage to clockwise
+		);
+		this.htmlElements.timerElement.style.animationPlayState = "running"; // Restart the animation if it was paused
 	},
 };
 
@@ -162,6 +155,7 @@ const quiz = {
 	questions: [...questions],
 	numberOfQuestion: 5,
 	timer,
+
 	// LISTENERS
 
 	singleQuestionListener() {},
@@ -219,16 +213,7 @@ const quiz = {
 		);
 	},
 
-	buildQuestion(question) {
-		this.selectQuestions();
-		const currentQuestion = document.getElementById("question");
-		const answerContainer = document.getElementById("answers-container");
-		const answers = [];
-		for (let i = 0; i < questions.length; i++) {
-			answers.push(questions[i].correct_answer);
-			answers.push(questions[i].incorrect_answers);
-		}
-	},
+	buildQuestion(question) {},
 
 	deleteQuestion(question) {},
 
@@ -237,12 +222,11 @@ const quiz = {
 	},
 
 	start() {
-		this.timer.init(10);
-		// this.activeQuestion = this.selectQuestions();
 		this.selectQuestions("hard");
-		console.log(this.activeQuestions);
-		this.htmlElements.confirmButton.addEventListener("click", e => {
-			this.timer.startTimerLister(e, this.timer);
+
+		this.htmlElements.confirmButton.addEventListener("click", () => {
+			if (this.timer.intervalId) this.timer.stopTimer(this.timer);
+			else this.timer.startTimer(this.timer, 14);
 		});
 	},
 };
