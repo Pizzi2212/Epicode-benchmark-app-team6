@@ -28,3 +28,9 @@
 form {
 	margin-top: 2rem;
 }
+.rating-text {
+	margin-top: 10px;
+	font-size: 1.5rem;
+	color: #333;
+	text-align: center; /* Centra il testo */
+}
