@@ -4,6 +4,7 @@
 
 .star-rating {
 	display: flex; /* Disposizione flessibile per le stelle */
+	flex-direction: row-reverse;
 	align-items: center; /* Allinea le stelle verticalmente al centro */
 	justify-content: center; /* Centra le stelle orizzontalmente */
 	gap: 10px; /* Spaziatura tra le stelle */
@@ -22,7 +23,7 @@
 	fill: aqua; /* Colore per le stelle selezionate */
 }
 
-.star:hover {
+.star:hover ~ .star {
 	fill: aqua; /* Colore al passaggio del mouse */
 }
 form {
