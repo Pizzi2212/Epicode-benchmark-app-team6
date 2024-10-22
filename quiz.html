@@ -23,27 +23,68 @@
 	</head>
 	<body>
 		<header>
-			<img class="logo" src="./assets/images/epicode_logo.png" alt="Epicode Logo" />
+			<img
+				class="logo"
+				src="./assets/images/epicode_logo.png"
+				alt="Epicode Logo"
+			/>
 		</header>
 		<main>
 			<div class="scene-quiz">
 				<p id="question" class="question">
-					How can i create a <br><strong>checkbox in HTML?</strong>
+					How can i create a
+					<br />
+					<strong>checkbox in HTML?</strong>
 				</p>
-				
-				<div id="timer" class="timer">
-					<p>SECONDS</p>
-					<p id="seconds"> &nbsp;</p>
-					<p>REMAINING</p>
+
+				<div class="timer-container">
+					<svg class="timer-svg" width="100" height="100">
+						<!-- Define the gradient -->
+						<defs>
+							<linearGradient
+								id="gradient-stroke"
+								x1="0%"
+								y1="0%"
+								x2="100%"
+								y2="100%"
+							>
+								<stop
+									offset="0%"
+									style="stop-color: #900080; stop-opacity: 1"
+								/>
+								<stop
+									offset="100%"
+									style="stop-color: #d20094; stop-opacity: 1"
+								/>
+							</linearGradient>
+						</defs>
+
+						<!-- Background circle -->
+						<circle class="background-circle" cx="50" cy="50" r="45"></circle>
+
+						<!-- Foreground circle with gradient -->
+						<circle
+							class="foreground-circle"
+							cx="50"
+							cy="50"
+							r="45"
+							stroke="url(#gradient-stroke)"
+						></circle>
+					</svg>
+					<div class="time-display" id="time">&nbsp;</div>
 				</div>
-				<div id="answers-container" class="answers-container">&nbsp;
+
+				<div id="answers-container" class="answers-container">
+					&nbsp;
 					<p>this answer</p>
 					<p>this answer</p>
 					<p>this answer</p>
 					<p>this answer</p>
 				</div>
 				<form>
-					<button class="btn--fluo" type="submit">Confirm</button>
+					<button id="confirm" class="btn btn--fluo" type="submit">
+						Confirm
+					</button>
 				</form>
 				<p class="question-counter">
 					Question
