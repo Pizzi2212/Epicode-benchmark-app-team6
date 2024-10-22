@@ -3,14 +3,30 @@
 /****************************/
 
 .star-rating {
+	display: flex; /* Disposizione flessibile per le stelle */
+	flex-direction: row-reverse;
+	align-items: center; /* Allinea le stelle verticalmente al centro */
+	justify-content: center; /* Centra le stelle orizzontalmente */
+	gap: 10px; /* Spaziatura tra le stelle */
+	margin: 2rem;
 }
 
 .star {
-	height: 5rem;
-	width: 5rem;
-	fill: black;
+	height: 3rem;
+	width: 3rem;
+	fill: black; /* Colore di base delle stelle */
+	transition: fill 0.3s; /* Transizione per il colore */
+	cursor: pointer; /* Mostra il cursore a mano quando si passa sopra */
 }
 
 .star--checked {
-	fill: aqua;
+	fill: aqua; /* Colore per le stelle selezionate */
+}
+
+.star:hover,
+.star:hover ~ .star {
+	fill: aqua; /* Colore al passaggio del mouse */
+}
+form {
+	margin-top: 2rem;
 }
