@@ -3,10 +3,11 @@
 const questions = [
 	{
 		category: "Science: Computers",
+		seconds: 90,
 		type: "multiple",
 		difficulty: "medium",
-		question: "What does CPU stand for?",
-		correct_answer: "Central Processing Unit",
+		question: "What does <strong>CPU</strong> stand for?",
+		correct_answers: ["Central Processing Unit", "polenta"],
 		incorrect_answers: [
 			"Central Process Unit",
 			"Computer Personal Unit",
@@ -19,7 +20,7 @@ const questions = [
 		difficulty: "hard",
 		question:
 			"In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
-		correct_answer: "Final",
+		correct_answers: ["Final"],
 		incorrect_answers: ["Static", "Private", "Public"],
 	},
 	{
@@ -27,7 +28,7 @@ const questions = [
 		type: "boolean",
 		difficulty: "medium",
 		question: "The logo for Snapchat is a Bell.",
-		correct_answer: "False",
+		correct_answers: ["False"],
 		incorrect_answers: ["True"],
 	},
 	{
@@ -36,7 +37,7 @@ const questions = [
 		difficulty: "hard",
 		question:
 			"Pointers were not used in the original C programming language; they were added later on in C++.",
-		correct_answer: "False",
+		correct_answers: ["False"],
 		incorrect_answers: ["True"],
 	},
 	{
@@ -45,7 +46,7 @@ const questions = [
 		difficulty: "easy",
 		question:
 			"What is the most preferred image format used for logos in the Wikimedia database?",
-		correct_answer: ".svg",
+		correct_answers: [".svg"],
 		incorrect_answers: [".png", ".jpeg", ".gif"],
 	},
 	{
@@ -53,7 +54,7 @@ const questions = [
 		type: "multiple",
 		difficulty: "easy",
 		question: "In web design, what does CSS stand for?",
-		correct_answer: "Cascading Style Sheet",
+		correct_answers: ["Cascading Style Sheet"],
 		incorrect_answers: [
 			"Counter Strike: Source",
 			"Corrective Style Sheet",
@@ -66,7 +67,7 @@ const questions = [
 		difficulty: "easy",
 		question:
 			"What is the code name for the mobile operating system Android 7.0?",
-		correct_answer: "Nougat",
+		correct_answers: ["Nougat"],
 		incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
 	},
 	{
@@ -74,7 +75,7 @@ const questions = [
 		type: "multiple",
 		difficulty: "easy",
 		question: "On Twitter, what is the character limit for a Tweet?",
-		correct_answer: "140",
+		correct_answers: ["140"],
 		incorrect_answers: ["120", "160", "100"],
 	},
 	{
@@ -82,7 +83,7 @@ const questions = [
 		type: "boolean",
 		difficulty: "easy",
 		question: "Linux was first created as an alternative to Windows XP.",
-		correct_answer: "False",
+		correct_answers: ["False"],
 		incorrect_answers: ["True"],
 	},
 	{
@@ -91,7 +92,7 @@ const questions = [
 		difficulty: "easy",
 		question:
 			"Which programming language shares its name with an island in Indonesia?",
-		correct_answer: "Java",
+		correct_answers: ["Java"],
 		incorrect_answers: ["Python", "C", "Jakarta"],
 	},
 ];
@@ -104,6 +105,11 @@ const timer = {
 	totalSeconds: 0,
 	currentSeconds: 0,
 	intervalId: null,
+	callBack: undefined,
+
+	setCallBack(self, callBack) {
+		self.callBack = callBack;
+	},
 
 	startTimer(self, seconds) {
 		self.totalSeconds = seconds;
@@ -119,7 +125,10 @@ const timer = {
 			if (self.currentSeconds <= 5)
 				self.htmlElements.timerElement.classList.add("pulse");
 
-			if (self.currentSeconds <= 0) self.stopTimer(self);
+			if (self.currentSeconds <= 0) {
+				self.stopTimer(self);
+				self.callBack();
+			}
 		}, 1000);
 	},
 
@@ -148,26 +157,56 @@ const timer = {
 const quiz = {
 	htmlElements: {
 		confirmButton: document.getElementById("confirm"),
+		answersContainer: document.getElementById("answers-container"),
+		question: document.getElementById("question"),
+		questionCounter: document.getElementById("question-counter"),
+		totalQuestion: document.getElementById("total-question"),
 	},
 	activeQuestions: undefined,
 	activeQuestion: undefined,
+	activeQuestionIndex: 0,
 	points: 0,
 	questions: [...questions],
-	numberOfQuestion: 5,
+	numberOfQuestion: 10,
 	timer,
+
+	getRandomElements(array, numberElements) {
+		if (numberElements === 0) return [];
+		const randomIndex = Math.floor(Math.random() * array.length);
+		return [
+			array[randomIndex],
+			...this.getRandomElements(
+				array.filter(element => element !== array[randomIndex]),
+				numberElements - 1,
+			),
+		];
+	},
 
 	// LISTENERS
 
-	singleQuestionListener() {},
+	singleQuestionListener({ target: button }) {
+		this.activeQuestion.allAnswers.forEach(({ button }) => {
+			button.classList.remove("btn-answer--selected");
+		});
+		button.classList.add("btn-answer--selected");
+	},
 
-	multipleQuestionListener() {},
+	multipleQuestionListener({ target: button }) {
+		button.classList.toggle("btn-answer--selected");
+	},
 
-	submitQuestionListener() {
-		// increment counter (activeQuestion)
-		// deleteQuestion()
-		// next()
-		// if not last question : buildQuestion()
-		// else showResult
+	submitQuestion() {
+		this.timer.stopTimer(this.timer);
+		this.updateScore();
+		this.deleteActiveQuestion();
+		if (this.activeQuestionIndex === this.activeQuestions.length)
+			this.showResult();
+		else {
+			this.activeQuestion = this.activeQuestions[this.activeQuestionIndex];
+			const seconds = this.buildActiveQuestion();
+			this.timer.startTimer(this.timer, seconds);
+			this.activeQuestionIndex++;
+		}
 	},
 
 	// LOGIC
@@ -195,39 +234,142 @@ const quiz = {
 					return filterAll;
 			}
 		};
-		const getRandomElements = (array, numberElements) => {
-			if (numberElements === 0) return [];
-			const randomIndex = Math.floor(Math.random() * array.length);
-			return [
-				array[randomIndex],
-				...getRandomElements(
-					array.filter(element => element !== array[randomIndex]),
-					numberElements - 1,
-				),
-			];
-		};
+
 		const availableQuestion = this.questions.filter(getFilterByDifficulty());
-		this.activeQuestions = getRandomElements(
+		this.activeQuestions = this.getRandomElements(
 			availableQuestion,
 			this.numberOfQuestion,
 		);
 	},
 
-	buildQuestion(question) {},
+	buildActiveQuestion() {
+		const mergedAnswers = [
+			...Array.from(this.activeQuestion.correct_answers, correct_answer => ({
+				text: correct_answer,
+				correct: true,
+			})),
+			...Array.from(
+				this.activeQuestion.incorrect_answers,
+				incorrect_answer => ({
+					text: incorrect_answer,
+					correct: false,
+				}),
+			),
+		];
+		const allAnswers = this.getRandomElements(
+			mergedAnswers,
+			mergedAnswers.length,
+		);
+		allAnswers.forEach(answer => {
+			switch (this.activeQuestion.type) {
+				case "multiple":
+					const button = document.createElement("button");
+					button.innerText = answer.text;
+					button.classList.add("btn-answer");
+					button.addEventListener("click", e => {
+						this.activeQuestion.correct_answers.length === 1
+							? this.singleQuestionListener(e)
+							: this.multipleQuestionListener(e);
+					});
+					answer.button = button;
+					break;
 
-	deleteQuestion(question) {},
+				case "boolean":
+					const radioContainer = document.createElement("div");
+
+					const radio = document.createElement("input");
+					radio.type = "radio";
+					radio.id = answer.text.replace(/[^a-z]/g, "");
+					radio.name = "booleanQuestion";
+
+					const label = document.createElement("label");
+					label.setAttribute("for", radio.id);
+					label.innerText = answer.text;
+
+					radioContainer.appendChild(radio);
+					radioContainer.appendChild(label);
+					answer.radio = radio;
+					answer.radioContainer = radioContainer;
+					break;
+
+				default:
+					console.log("switch answer type: error");
+			}
+		});
+
+		this.activeQuestion.allAnswers = allAnswers;
+
+		// display graphic
+		this.htmlElements.questionCounter.innerText = this.activeQuestionIndex + 1;
+
+		this.htmlElements.question.innerHTML = this.activeQuestion.question;
+		const getElementToDisplay = answer => {
+			switch (this.activeQuestion.type) {
+				case "multiple":
+					return answer.button;
+				case "boolean":
+					return answer.radioContainer;
+				default:
+					return null;
+			}
+		};
+		allAnswers.forEach(answer => {
+			this.htmlElements.answersContainer.appendChild(
+				getElementToDisplay(answer),
+			);
+		});
+		return this.activeQuestion.seconds ?? 10;
+	},
+
+	deleteActiveQuestion() {
+		this.activeQuestion?.allAnswers.forEach(answer => {
+			answer?.button?.remove();
+			answer?.radioContainer?.remove();
+		});
+		this.htmlElements.question.innerHTML = "&nbsp;";
+	},
+
+	updateScore() {
+		const rightAnswer = answers => {
+			if (!answers) return false;
+			if (!answers.length) return true;
+			const correctIncluded = this.activeQuestion.correct_answers.includes(
+				answers[0].text,
+			);
+			switch (this.activeQuestion.type) {
+				case "multiple":
+					if (
+						answers[0].button.classList.contains("btn-answer--selected") !==
+						correctIncluded
+					)
+						return false;
+					break;
+				case "boolean":
+					if (answers[0].radio.checked !== correctIncluded) return false;
+					break;
+				default:
+					return false;
+			}
+
+			return rightAnswer(answers.slice(1));
+		};
+		if (rightAnswer(this.activeQuestion?.allAnswers)) this.points++;
+	},
 
 	showResult() {
 		// TODO: define how it works
 	},
 
 	start() {
-		this.selectQuestions("hard");
-
-		this.htmlElements.confirmButton.addEventListener("click", () => {
-			if (this.timer.intervalId) this.timer.stopTimer(this.timer);
-			else this.timer.startTimer(this.timer, 14);
+		this.selectQuestions("all");
+		this.htmlElements.totalQuestion.innerText = this.activeQuestions.length;
+		this.timer.setCallBack(this.timer, () => {
+			this.submitQuestion();
 		});
+		this.htmlElements.confirmButton.addEventListener("click", () => {
+			this.submitQuestion();
+		});
+		this.submitQuestion();
 	},
 };
 
