@@ -1,78 +1,87 @@
 /****************************/
-/* HEADER */
+/* TITLE */
 /****************************/
 
 .title {
-	font-family: "Outfit";
-	font-size: 5rem;
-	line-height: 0.8;
-	padding-top: 5rem;
-	padding-bottom: 3rem;
+	font-family: "Outfit", sans-serif;
+	font-size: 9rem;
+	line-height: 0.75;
+	margin-bottom: 6.4rem;
 }
 
 /****************************/
-/* MAIN */
+/* INSTRUCTIONS */
 /****************************/
 
-h2 {
-	font-size: 1.8rem;
-	line-height: 1.7;
+.instruction-title {
+	line-height: 2;
+	font-size: 2.8rem;
 }
+
+.instruction-description {
+	width: 60%;
+	margin-bottom: 4.8rem;
+}
+
+/****************************/
+/* RULES */
+/****************************/
 
 .rules {
-	padding-top: 3rem;
-	padding-bottom: 4rem;
-	font-size: 1rem;
-	line-height: 1.8;
-	list-style: disc;
-	padding-left: 1.5rem;
+	padding-left: 2.4rem;
+	margin-bottom: 4.8rem;
 }
 
-form {
+.rules > li {
+	list-style: disc;
+	font-size: var(--general-text-size);
+	line-height: 1.5;
+}
+
+/****************************/
+/* PROCEED */
+/****************************/
+
+.proceed-form {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
-label {
-	margin-right: auto;
-	padding: 1rem;
+.checkbox-container {
+	display: flex;
+	align-items: center;
 }
 
-button {
-	margin-left: auto;
-}
-
-main p {
-	font-size: 1rem;
-	line-height: 1.1;
-}
-
-.checkbox input {
-	height: 0;
-	width: 0;
+.checkbox-label {
+	display: block;
+	padding: 0.5rem 1.8rem;
 }
 
 .checkbox {
-	display: inline-block;
-	position: relative;
-	padding-left: 2rem;
-	user-select: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	color: currentColor;
+	width: var(--general-text-size);
+	height: var(--general-text-size);
+	border: 2px solid currentColor;
+	border-radius: 0.15em;
+	display: grid;
+	place-content: center;
 }
 
-.checkmark {
-	position: absolute;
-	top: 30%;
-	left: 0;
-	height: 20px;
-	width: 20px;
-	border: 2px solid white;
+.checkbox::before {
+	content: "";
+	width: calc(var(--general-text-size) * 0.6);
+	height: calc(var(--general-text-size) * 0.6);
+	transform: scale(0);
+	/* transition: 120ms transform ease-in-out; */
+	box-shadow: inset 2rem 2rem var(--accent-color);
 }
 
-.checkbox:hover input ~ .checkmark {
-	background-color: rgb(255, 255, 255, 0.5);
-}
-
-.checkbox input:checked ~ .checkmark {
-	background-color: rgb(255, 255, 255);
+.checkbox:checked::before {
+	transform: scale(1);
+	transform-origin: bottom left;
+	clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }

@@ -33,18 +33,18 @@
 				alt="Epicode Logo"
 			/>
 		</header>
-		<main class="main-container">
-			<main>
+		<main>
+			<div>
 				<h1 class="title">
 					Welcome to
-					<div><em>your exam</em></div>
-				</h1>
-				<h2>
-					<strong><em>Instructions</em></strong>
-				</h2>
-				<p>
-					We don't expect most engineers to know the answers to all of these
 					<br />
+					<em>your exam</em>
+				</h1>
+				<h2 class="instruction-title">
+					<strong>Instructions</strong>
+				</h2>
+				<p class="instruction-description">
+					We don't expect most engineers to know the answers to all of these
 					questions, so don't worry if you're unsure of a few of them.
 				</p>
 				<ul class="rules">
@@ -63,15 +63,22 @@
 						<em>0-5 minutes.</em>
 					</li>
 				</ul>
-				<form action="quiz.html">
-					<label class="checkbox" for="answer-myself">
-						<input type="checkbox" name="" id="answer-myself" required />
-						<span class="checkmark"></span>
-						I promise to answer myself without help from anyone
-					</label>
+				<form action="quiz.html" class="proceed-form">
+					<div class="checkbox-container">
+						<input
+							class="checkbox"
+							type="checkbox"
+							name=""
+							id="answer-myself"
+							required
+						/>
+						<label class="checkbox-label" for="answer-myself">
+							I promise to answer myself without help from anyone
+						</label>
+					</div>
 					<button class="btn btn--fluo" type="submit">PROCEED</button>
 				</form>
-			</main>
+			</div>
 		</main>
 		<footer>&nbsp;</footer>
 	</body>

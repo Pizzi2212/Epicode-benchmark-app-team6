@@ -6,7 +6,7 @@ const questions = [
 		seconds: 90,
 		type: "multiple",
 		difficulty: "medium",
-		question: "What does <strong>CPU</strong> stand for?",
+		question: "What does <em>CPU</em> stand for?",
 		correct_answers: ["Central Processing Unit", "polenta"],
 		incorrect_answers: [
 			"Central Process Unit",
@@ -167,7 +167,7 @@ const quiz = {
 	activeQuestionIndex: 0,
 	points: 0,
 	questions: [...questions],
-	numberOfQuestion: 10,
+	numberOfQuestion: 5,
 	timer,
 
 	getRandomElements(array, numberElements) {
