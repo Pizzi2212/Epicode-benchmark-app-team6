@@ -84,7 +84,24 @@
 
 .answers-container {
 	text-align: center;
+	width: 80%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 2rem;
+}
+
+.btn-answer {
+	padding: 2.4rem;
+	color: var(--text-color);
+	font-size: var(--general-text-size);
+	border: none;
+	background-color: #ffffff11;
+	border-radius: 1000px;
+	cursor: pointer;
+	box-shadow: inset 1px 0px 0 #ffffff99, inset -1px 2px 0 #ffffff66,
+		inset 0px -2px 0 #ffffff22;
+}
+
+.btn-answer--selected {
+	background-color: #d2009499;
 }
