@@ -1,26 +1,40 @@
 /****************************/
+/* VARIABLES */
+/****************************/
+
+:root {
+	/* COLORS */
+	--text-color: #c7c7c7;
+	--em-color: #fff;
+	--accent-color: #0ff;
+	--second-color: #d20094;
+	--second-color-variation: #900080;
+	/* SIZES */
+	--general-text-size: 1.8rem;
+}
+
+/****************************/
 /* GENERAL */
 /****************************/
 
 body {
 	width: 100%;
 	height: 100vh;
-	padding: 4rem 8rem;
+	padding: 4rem 10%;
 	background-image: url(./../images/bg.jpg);
 	background-size: cover;
 	font-family: "Inter", sans-serif;
-	color: white;
+	font-size: var(--general-text-size);
+	color: var(--text-color);
 }
 
 em {
 	font-weight: bold;
+	color: var(--em-color);
 }
 
 strong {
-	color: #d20094;
-}
-
-p {
+	color: var(--second-color);
 }
 
 .hide {
@@ -28,28 +42,51 @@ p {
 }
 
 /****************************/
+/* PAGES LAYOUT */
+/****************************/
+
+body > header {
+	height: 10%;
+	display: flex;
+	align-items: center;
+}
+
+body > main {
+	height: 85%;
+	align-content: center;
+}
+
+body > footer {
+	height: 5%;
+}
+
+/****************************/
 /* HEADER */
 /****************************/
 
 .logo {
-	width: 15rem;
+	height: 80%;
 }
 
+/****************************/
+/* BUTTONS */
+/****************************/
+
 .btn {
-	width: 220px;
-	height: 60px;
-	font-size: 21px;
+	width: 22rem;
+	height: 6rem;
+	font-size: 2.1rem;
 	font-weight: bold;
 }
 
 .btn--fluo {
-	background-color: #00ffff;
+	background-color: var(--accent-color);
 	border: none;
-	box-shadow: 0px 0px 30px 0px #00ffff;
+	box-shadow: 0 0 3rem 0 var(--accent-color);
 }
 
 .btn--hollow {
 	background-color: transparent;
-	border: 2px solid white;
-	color: white;
+	border: 2px solid #fff;
+	color: #fff;
 }

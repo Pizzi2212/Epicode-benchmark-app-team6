@@ -167,7 +167,7 @@ const quiz = {
 	activeQuestionIndex: 0,
 	points: 0,
 	questions: [...questions],
-	numberOfQuestion: 10,
+	numberOfQuestion: 5,
 	timer,
 
 	getRandomElements(array, numberElements) {

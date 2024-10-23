@@ -63,7 +63,8 @@
 .question {
 	margin-top: 10rem;
 	text-align: center;
-	font-size: 4rem;
+	padding: 0 7.2rem;
+	font-size: 3.2rem;
 	color: white;
 }
 
