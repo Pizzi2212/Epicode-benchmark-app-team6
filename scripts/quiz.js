@@ -6,7 +6,7 @@ const questions = [
 		type: "multiple",
 		difficulty: "medium",
 		question: "What does CPU stand for?",
-		correct_answer: "Central Processing Unit",
+		correct_answers: ["Central Processing Unit"],
 		incorrect_answers: [
 			"Central Process Unit",
 			"Computer Personal Unit",
@@ -19,7 +19,7 @@ const questions = [
 		difficulty: "hard",
 		question:
 			"In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
-		correct_answer: "Final",
+		correct_answers: ["Final"],
 		incorrect_answers: ["Static", "Private", "Public"],
 	},
 	{
@@ -27,7 +27,7 @@ const questions = [
 		type: "boolean",
 		difficulty: "medium",
 		question: "The logo for Snapchat is a Bell.",
-		correct_answer: "False",
+		correct_answers: ["False"],
 		incorrect_answers: ["True"],
 	},
 	{
@@ -36,7 +36,7 @@ const questions = [
 		difficulty: "hard",
 		question:
 			"Pointers were not used in the original C programming language; they were added later on in C++.",
-		correct_answer: "False",
+		correct_answers: ["False"],
 		incorrect_answers: ["True"],
 	},
 	{
@@ -45,7 +45,7 @@ const questions = [
 		difficulty: "easy",
 		question:
 			"What is the most preferred image format used for logos in the Wikimedia database?",
-		correct_answer: ".svg",
+		correct_answers: [".svg"],
 		incorrect_answers: [".png", ".jpeg", ".gif"],
 	},
 	{
@@ -53,7 +53,7 @@ const questions = [
 		type: "multiple",
 		difficulty: "easy",
 		question: "In web design, what does CSS stand for?",
-		correct_answer: "Cascading Style Sheet",
+		correct_answers: ["Cascading Style Sheet"],
 		incorrect_answers: [
 			"Counter Strike: Source",
 			"Corrective Style Sheet",
@@ -66,7 +66,7 @@ const questions = [
 		difficulty: "easy",
 		question:
 			"What is the code name for the mobile operating system Android 7.0?",
-		correct_answer: "Nougat",
+		correct_answers: ["Nougat"],
 		incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
 	},
 	{
@@ -74,7 +74,7 @@ const questions = [
 		type: "multiple",
 		difficulty: "easy",
 		question: "On Twitter, what is the character limit for a Tweet?",
-		correct_answer: "140",
+		correct_answers: ["140"],
 		incorrect_answers: ["120", "160", "100"],
 	},
 	{
@@ -82,7 +82,7 @@ const questions = [
 		type: "boolean",
 		difficulty: "easy",
 		question: "Linux was first created as an alternative to Windows XP.",
-		correct_answer: "False",
+		correct_answers: ["False"],
 		incorrect_answers: ["True"],
 	},
 	{
@@ -91,7 +91,7 @@ const questions = [
 		difficulty: "easy",
 		question:
 			"Which programming language shares its name with an island in Indonesia?",
-		correct_answer: "Java",
+		correct_answers: ["Java"],
 		incorrect_answers: ["Python", "C", "Jakarta"],
 	},
 ];
@@ -148,13 +148,28 @@ const timer = {
 const quiz = {
 	htmlElements: {
 		confirmButton: document.getElementById("confirm"),
+		answersContainer: document.getElementById("answers-container"),
+		question: document.getElementById("question"),
 	},
 	activeQuestions: undefined,
 	activeQuestion: undefined,
+	activeQuestionIndex: 0,
 	points: 0,
 	questions: [...questions],
 	numberOfQuestion: 5,
 	timer,
+
+	getRandomElements(array, numberElements) {
+		if (numberElements === 0) return [];
+		const randomIndex = Math.floor(Math.random() * array.length);
+		return [
+			array[randomIndex],
+			...this.getRandomElements(
+				array.filter(element => element !== array[randomIndex]),
+				numberElements - 1,
+			),
+		];
+	},
 
 	// LISTENERS
 
@@ -163,11 +178,17 @@ const quiz = {
 	multipleQuestionListener() {},
 
 	submitQuestionListener() {
-		// increment counter (activeQuestion)
-		// deleteQuestion()
-		// next()
-		// if not last question : buildQuestion()
-		// else showResult
+		if (this.activeQuestionIndex === this.activeQuestions.length)
+			this.showResult();
+		else {
+			this.timer.stopTimer(this.timer);
+			this.updateScore();
+			this.deleteActiveQuestion();
+			this.activeQuestion = this.activeQuestions[this.activeQuestionIndex];
+			const seconds = this.buildActiveQuestion();
+			this.timer.startTimer(this.timer, seconds);
+			this.activeQuestionIndex++;
+		}
 	},
 
 	// LOGIC
@@ -195,38 +216,61 @@ const quiz = {
 					return filterAll;
 			}
 		};
-		const getRandomElements = (array, numberElements) => {
-			if (numberElements === 0) return [];
-			const randomIndex = Math.floor(Math.random() * array.length);
-			return [
-				array[randomIndex],
-				...getRandomElements(
-					array.filter(element => element !== array[randomIndex]),
-					numberElements - 1,
-				),
-			];
-		};
+
 		const availableQuestion = this.questions.filter(getFilterByDifficulty());
-		this.activeQuestions = getRandomElements(
+		this.activeQuestions = this.getRandomElements(
 			availableQuestion,
 			this.numberOfQuestion,
 		);
 	},
 
-	buildQuestion(question) {},
+	buildActiveQuestion() {
+		const mergedAnswers = [
+			...Array.from(this.activeQuestion.correct_answers, correct_answer => ({
+				text: correct_answer,
+				correct: true,
+			})),
+			...Array.from(
+				this.activeQuestion.incorrect_answers,
+				incorrect_answer => ({
+					text: incorrect_answer,
+					correct: false,
+				}),
+			),
+		];
+		const allAnswers = this.getRandomElements(
+			mergedAnswers,
+			mergedAnswers.length,
+		);
+		allAnswers.forEach(answer => {
+			const button = document.createElement("button");
+			button.innerText = answer.text;
+			//TODO add css classes
+			//TODO add right listener
+			answer.button = button;
+		});
+		this.htmlElements.question.innerHTML = this.activeQuestion.question;
 
-	deleteQuestion(question) {},
+		allAnswers.forEach(({ button }) => {
+			this.htmlElements.answersContainer.appendChild(button);
+		});
+		console.log(allAnswers);
+		return this.activeQuestion.seconds ?? 10;
+	},
+
+	deleteActiveQuestion() {},
+
+	updateScore() {},
 
 	showResult() {
 		// TODO: define how it works
 	},
 
 	start() {
-		this.selectQuestions("hard");
+		this.selectQuestions("all");
 
 		this.htmlElements.confirmButton.addEventListener("click", () => {
-			if (this.timer.intervalId) this.timer.stopTimer(this.timer);
-			else this.timer.startTimer(this.timer, 14);
+			this.submitQuestionListener();
 		});
 	},
 };
