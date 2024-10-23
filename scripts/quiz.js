@@ -7,7 +7,7 @@ const questions = [
 		type: "multiple",
 		difficulty: "medium",
 		question: "What does <strong>CPU</strong> stand for?",
-		correct_answers: ["Central Processing Unit"],
+		correct_answers: ["Central Processing Unit", "polenta"],
 		incorrect_answers: [
 			"Central Process Unit",
 			"Computer Personal Unit",
@@ -105,6 +105,11 @@ const timer = {
 	totalSeconds: 0,
 	currentSeconds: 0,
 	intervalId: null,
+	callBack: undefined,
+
+	setCallBack(self, callBack) {
+		self.callBack = callBack;
+	},
 
 	startTimer(self, seconds) {
 		self.totalSeconds = seconds;
@@ -120,7 +125,10 @@ const timer = {
 			if (self.currentSeconds <= 5)
 				self.htmlElements.timerElement.classList.add("pulse");
 
-			if (self.currentSeconds <= 0) self.stopTimer(self);
+			if (self.currentSeconds <= 0) {
+				self.stopTimer(self);
+				self.callBack();
+			}
 		}, 1000);
 	},
 
@@ -159,7 +167,7 @@ const quiz = {
 	activeQuestionIndex: 0,
 	points: 0,
 	questions: [...questions],
-	numberOfQuestion: 5,
+	numberOfQuestion: 10,
 	timer,
 
 	getRandomElements(array, numberElements) {
@@ -177,18 +185,23 @@ const quiz = {
 	// LISTENERS
 
 	singleQuestionListener({ target: button }) {
+		this.activeQuestion.allAnswers.forEach(({ button }) => {
+			button.classList.remove("btn-answer--selected");
+		});
+		button.classList.add("btn-answer--selected");
+	},
+
+	multipleQuestionListener({ target: button }) {
 		button.classList.toggle("btn-answer--selected");
 	},
 
-	multipleQuestionListener() {},
-
-	submitQuestionListener() {
+	submitQuestion() {
+		this.timer.stopTimer(this.timer);
+		this.updateScore();
+		this.deleteActiveQuestion();
 		if (this.activeQuestionIndex === this.activeQuestions.length)
 			this.showResult();
 		else {
-			this.timer.stopTimer(this.timer);
-			this.updateScore(); //TODO
-			this.deleteActiveQuestion();
 			this.activeQuestion = this.activeQuestions[this.activeQuestionIndex];
 			const seconds = this.buildActiveQuestion();
 			this.timer.startTimer(this.timer, seconds);
@@ -248,14 +261,40 @@ const quiz = {
 			mergedAnswers.length,
 		);
 		allAnswers.forEach(answer => {
-			const button = document.createElement("button");
-			button.innerText = answer.text;
-			button.classList.add("btn-answer");
-			button.addEventListener("click", e => {
-				this.singleQuestionListener(e);
-			});
-			//TODO add right listener
-			answer.button = button;
+			switch (this.activeQuestion.type) {
+				case "multiple":
+					const button = document.createElement("button");
+					button.innerText = answer.text;
+					button.classList.add("btn-answer");
+					button.addEventListener("click", e => {
+						this.activeQuestion.correct_answers.length === 1
+							? this.singleQuestionListener(e)
+							: this.multipleQuestionListener(e);
+					});
+					answer.button = button;
+					break;
+
+				case "boolean":
+					const radioContainer = document.createElement("div");
+
+					const radio = document.createElement("input");
+					radio.type = "radio";
+					radio.id = answer.text.replace(/[^a-z]/g, "");
+					radio.name = "booleanQuestion";
+
+					const label = document.createElement("label");
+					label.setAttribute("for", radio.id);
+					label.innerText = answer.text;
+
+					radioContainer.appendChild(radio);
+					radioContainer.appendChild(label);
+					answer.radio = radio;
+					answer.radioContainer = radioContainer;
+					break;
+
+				default:
+					console.log("switch answer type: error");
+			}
 		});
 
 		this.activeQuestion.allAnswers = allAnswers;
@@ -264,34 +303,73 @@ const quiz = {
 		this.htmlElements.questionCounter.innerText = this.activeQuestionIndex + 1;
 
 		this.htmlElements.question.innerHTML = this.activeQuestion.question;
-
-		allAnswers.forEach(({ button }) => {
-			this.htmlElements.answersContainer.appendChild(button);
+		const getElementToDisplay = answer => {
+			switch (this.activeQuestion.type) {
+				case "multiple":
+					return answer.button;
+				case "boolean":
+					return answer.radioContainer;
+				default:
+					return null;
+			}
+		};
+		allAnswers.forEach(answer => {
+			this.htmlElements.answersContainer.appendChild(
+				getElementToDisplay(answer),
+			);
 		});
-		console.log(allAnswers);
 		return this.activeQuestion.seconds ?? 10;
 	},
 
 	deleteActiveQuestion() {
-		this.activeQuestion?.allAnswers.forEach(({ button }) => {
-			button.remove();
+		this.activeQuestion?.allAnswers.forEach(answer => {
+			answer?.button?.remove();
+			answer?.radioContainer?.remove();
 		});
 		this.htmlElements.question.innerHTML = "&nbsp;";
 	},
 
-	updateScore() {},
+	updateScore() {
+		const rightAnswer = answers => {
+			if (!answers) return false;
+			if (!answers.length) return true;
+			const correctIncluded = this.activeQuestion.correct_answers.includes(
+				answers[0].text,
+			);
+			switch (this.activeQuestion.type) {
+				case "multiple":
+					if (
+						answers[0].button.classList.contains("btn-answer--selected") !==
+						correctIncluded
+					)
+						return false;
+					break;
+				case "boolean":
+					if (answers[0].radio.checked !== correctIncluded) return false;
+					break;
+				default:
+					return false;
+			}
+
+			return rightAnswer(answers.slice(1));
+		};
+		if (rightAnswer(this.activeQuestion?.allAnswers)) this.points++;
+	},
 
 	showResult() {
 		// TODO: define how it works
 	},
 
 	start() {
-		this.selectQuestions("medium");
-
+		this.selectQuestions("all");
 		this.htmlElements.totalQuestion.innerText = this.activeQuestions.length;
-		this.htmlElements.confirmButton.addEventListener("click", () => {
-			this.submitQuestionListener();
+		this.timer.setCallBack(this.timer, () => {
+			this.submitQuestion();
 		});
+		this.htmlElements.confirmButton.addEventListener("click", () => {
+			this.submitQuestion();
+		});
+		this.submitQuestion();
 	},
 };
 
