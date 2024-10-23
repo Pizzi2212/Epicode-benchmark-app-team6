@@ -3,9 +3,10 @@
 const questions = [
 	{
 		category: "Science: Computers",
+		seconds: 90,
 		type: "multiple",
 		difficulty: "medium",
-		question: "What does CPU stand for?",
+		question: "What does <strong>CPU</strong> stand for?",
 		correct_answers: ["Central Processing Unit"],
 		incorrect_answers: [
 			"Central Process Unit",
@@ -150,6 +151,8 @@ const quiz = {
 		confirmButton: document.getElementById("confirm"),
 		answersContainer: document.getElementById("answers-container"),
 		question: document.getElementById("question"),
+		questionCounter: document.getElementById("question-counter"),
+		totalQuestion: document.getElementById("total-question"),
 	},
 	activeQuestions: undefined,
 	activeQuestion: undefined,
@@ -173,7 +176,9 @@ const quiz = {
 
 	// LISTENERS
 
-	singleQuestionListener() {},
+	singleQuestionListener({ target: button }) {
+		button.classList.toggle("btn-answer--selected");
+	},
 
 	multipleQuestionListener() {},
 
@@ -182,7 +187,7 @@ const quiz = {
 			this.showResult();
 		else {
 			this.timer.stopTimer(this.timer);
-			this.updateScore();
+			this.updateScore(); //TODO
 			this.deleteActiveQuestion();
 			this.activeQuestion = this.activeQuestions[this.activeQuestionIndex];
 			const seconds = this.buildActiveQuestion();
@@ -245,10 +250,19 @@ const quiz = {
 		allAnswers.forEach(answer => {
 			const button = document.createElement("button");
 			button.innerText = answer.text;
-			//TODO add css classes
+			button.classList.add("btn-answer");
+			button.addEventListener("click", e => {
+				this.singleQuestionListener(e);
+			});
 			//TODO add right listener
 			answer.button = button;
 		});
+
+		this.activeQuestion.allAnswers = allAnswers;
+
+		// display graphic
+		this.htmlElements.questionCounter.innerText = this.activeQuestionIndex + 1;
+
 		this.htmlElements.question.innerHTML = this.activeQuestion.question;
 
 		allAnswers.forEach(({ button }) => {
@@ -258,7 +272,12 @@ const quiz = {
 		return this.activeQuestion.seconds ?? 10;
 	},
 
-	deleteActiveQuestion() {},
+	deleteActiveQuestion() {
+		this.activeQuestion?.allAnswers.forEach(({ button }) => {
+			button.remove();
+		});
+		this.htmlElements.question.innerHTML = "&nbsp;";
+	},
 
 	updateScore() {},
 
@@ -267,8 +286,9 @@ const quiz = {
 	},
 
 	start() {
-		this.selectQuestions("all");
+		this.selectQuestions("medium");
 
+		this.htmlElements.totalQuestion.innerText = this.activeQuestions.length;
 		this.htmlElements.confirmButton.addEventListener("click", () => {
 			this.submitQuestionListener();
 		});
