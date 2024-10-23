@@ -5,20 +5,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	let selectedRating = 0;
 
 	stars.forEach((star, index) => {
+		// Gestione del clic sulla stella
 		star.addEventListener("click", () => {
 			selectedRating = index + 1;
 			updateStars();
 		});
 
+		// Gestione dell'hover per il punteggio
 		star.addEventListener("mouseover", () => {
 			highlightStars(index + 1);
 		});
 
+		// Rimozione dell'hover
 		star.addEventListener("mouseout", () => {
 			highlightStars(selectedRating);
 		});
 	});
 
+	// Funzione per aggiornare le stelle
 	function updateStars() {
 		stars.forEach((s, i) => {
 			if (i < selectedRating) {
@@ -28,9 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 
+		// Gestisci lo stato del pulsante in base al punteggio
 		submitButton.disabled = selectedRating === 0;
 	}
 
+	// Funzione per evidenziare le stelle
 	function highlightStars(rating) {
 		stars.forEach((s, i) => {
 			if (i < rating) {
@@ -41,8 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	}
 
+	// Gestione dell'invio del modulo
 	document.querySelector("form").addEventListener("submit", event => {
 		event.preventDefault();
+
+		const comment = commentInput.value;
 
 		if (selectedRating > 0 && comment) {
 			alert(
