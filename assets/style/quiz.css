@@ -131,8 +131,8 @@ body > footer {
 	background-color: #ffffff11;
 	border-radius: 1000px;
 	cursor: pointer;
-	box-shadow: inset 1px 0px 0 #ffffff99, inset -1px 2px 0 #ffffff66,
-		inset 0px -2px 0 #ffffff22;
+	box-shadow: inset 2px 2px 0 #ffffffb6, inset -2px 2px 0 #ffffff46,
+		inset 2px -2px 0 #ffffff46, inset -2px -2px 0 #ffffff00;
 }
 
 .btn-answer--selected {
