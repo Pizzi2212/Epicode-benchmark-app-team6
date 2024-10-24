@@ -43,7 +43,7 @@ h2 {
 	width: 100%; /* Assicurati che si estenda completamente */
 	resize: none; /* Disabilita il ridimensionamento */
 	padding: 10px; /* Padding per il contenuto */
-	margin-bottom: 10px; /* Spazio sotto il textarea */
+	margin-bottom: 5rem; /* Spazio sotto il textarea */
 	border-bottom: 2px solid fuchsia; /* Linea fucsia in basso nell'area di input */
 	box-shadow: none; /* Rimuovi eventuali ombre */
 	color: white;
@@ -51,6 +51,9 @@ h2 {
 
 /* Stile per il pulsante */
 button {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
 	justify-content: center; /* Centra il contenuto orizzontalmente */
 	background-color: aqua; /* Colore di sfondo del pulsante */
 	border: none; /* Rimuovi il bordo */
