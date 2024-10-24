@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 
-		// Gestisci lo stato del pulsante in base al punteggio
 		submitButton.disabled = selectedRating === 0;
 	}
 
@@ -53,16 +52,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		const comment = commentInput.value;
 
-		if (selectedRating > 0 && comment) {
+		// Condizione per visualizzare un solo alert
+		if (selectedRating > 0 && comment.trim() !== "") {
 			alert(
-				`Grazie per il tuo feedback!\nPunteggio: ${selectedRating} \nCommento: ${comment}`,
+				`Thank you for your feedback!\nPunteer: ${selectedRating}\nComment: ${comment}`,
 			);
 
+			// Reset dello stato
 			selectedRating = 0;
 			commentInput.value = "";
 			updateStars();
-		} else {
-			alert("Per favore, seleziona una valutazione e scrivi un commento.");
+
+			// Rimuovere la classe da tutte le stelle
+			stars.forEach(s => {
+				s.classList.remove("star--checked");
+			});
 		}
 	});
 });
