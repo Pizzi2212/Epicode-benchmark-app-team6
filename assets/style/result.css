@@ -1,0 +1,111 @@
+.scene-results {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	gap: 2rem;
+	margin-bottom: 5%;
+}
+
+/****************************/
+/* TITLE */
+/****************************/
+
+.result-title {
+	font-size: 4.8rem;
+	text-align: center;
+	letter-spacing: 1px;
+	margin-bottom: 0.4rem;
+}
+
+.result-description {
+	text-align: center;
+	letter-spacing: 0.8px;
+}
+
+/****************************/
+/* RESULT */
+/****************************/
+
+.results-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+/* SIDE */
+
+.answer-stat {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+.answer-stat > h4 {
+	font-size: 4.8rem;
+}
+
+.answer-stat > p:first-of-type {
+	font-size: 6.8rem;
+	line-height: 0.8;
+}
+
+.answer-stat > p:last-of-type {
+	font-size: 2.4rem;
+}
+
+.answer-stat--wrong {
+	text-align: end;
+}
+
+/* CHART */
+
+.answer-graphics {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+}
+
+.chart {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+}
+
+.feedback {
+	position: absolute;
+	inset: 0;
+	align-content: center;
+	text-align: center;
+}
+
+.color-passed {
+	padding-bottom: 1rem;
+	color: #0ff;
+}
+
+.is-passed {
+	padding-bottom: 1rem;
+}
+
+.color-not-passed {
+	color: #d20094;
+}
+
+.feedback-title {
+	font-size: 1.2rem;
+	font-family: "Inter";
+	line-height: 0.4rem;
+	font-weight: 500;
+}
+
+.feedback-description {
+	font-size: 0.9rem;
+	color: white;
+	font-family: "Inter";
+	line-height: 0.3rem;
+	font-weight: 300;
+}
