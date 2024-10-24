@@ -6,8 +6,8 @@
 	position: absolute;
 	top: 4.8rem;
 	right: 4.8rem;
-	width: 9rem;
-	height: 9rem;
+	width: 11rem;
+	height: 11rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -29,8 +29,8 @@
 }
 
 .time {
-	height: 7.2rem;
-	width: 7.2rem;
+	height: 9rem;
+	width: 9rem;
 	font-size: 2.4rem;
 	font-weight: bold;
 	background-color: #000;
@@ -68,6 +68,14 @@
 	align-items: center;
 }
 
+body > main {
+	height: 90%;
+}
+
+body > footer {
+	height: 0;
+}
+
 /****************************/
 /* QUESTION */
 /****************************/
@@ -86,9 +94,21 @@
 	text-align: center;
 	width: 80%;
 	display: grid;
+}
+
+.answers-container.multiple {
 	grid-template-columns: 1fr 1fr;
 	gap: 2rem;
 }
+
+.answers-container.boolean {
+	width: auto;
+	margin: 0 auto;
+	grid-template-columns: 1fr;
+	gap: 2.8rem;
+}
+
+/* BUTTONS */
 
 .btn-answer {
 	padding: 2.4rem;
@@ -104,4 +124,49 @@
 
 .btn-answer--selected {
 	background-color: #d2009499;
+}
+
+/* RADIO */
+
+.radio-container {
+	font-size: var(--general-text-size);
+	line-height: 1.1;
+	justify-self: start;
+	display: inline-flex;
+	align-items: center;
+}
+
+.radio-container label {
+	padding: 1rem;
+}
+
+.radio-container input[type="radio"] {
+	color: currentColor;
+	width: var(--general-text-size);
+	height: var(--general-text-size);
+	box-shadow: 0 0 0 1px var(--text-color);
+}
+
+.radio-container input[type="radio"]:hover {
+	border-width: 0;
+}
+
+.radio-container input[type="radio"]:checked {
+	box-shadow: 0 0 0 1px var(--second-color-variation);
+	background-color: var(--second-color-variation);
+	border-width: 0.2rem;
+}
+
+.radio-container input[type="radio"] {
+	/* hiding browser el */
+	appearance: none;
+	/* Safari support */
+	-webkit-appearance: none;
+	border: 0.5px solid var(--text-color);
+	background-color: transparent;
+	border-radius: 50%;
+}
+
+.radio-container input[type="radio"]:focus-visible {
+	outline-offset: 0;
 }
