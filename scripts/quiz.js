@@ -237,8 +237,8 @@ const quiz = {
 	activeQuestion: undefined,
 	activeQuestionIndex: 0,
 	points: 0,
-	questions: [...questions],
-	numberOfQuestion: 5,
+	questions: undefined,
+	numberOfQuestion: undefined,
 	timer,
 	defaultSecond: 180,
 	result,
@@ -450,8 +450,10 @@ const quiz = {
 		this.result.show();
 	},
 
-	start() {
-		this.selectQuestions("all");
+	start(questions, numberOfQuestion, difficulty) {
+		this.questions = questions;
+		this.numberOfQuestion = numberOfQuestion ?? 5;
+		this.selectQuestions(difficulty);
 		this.htmlElements.totalQuestion.innerText = this.activeQuestions.length;
 		this.timer.setCallBack(this.timer, () => {
 			this.submitQuestion();
@@ -463,4 +465,21 @@ const quiz = {
 	},
 };
 
-quiz.start();
+async function getQuestions() {
+	try {
+		const data = await fetch("./../assets/questions.json");
+		if (!data.ok) throw new Error("Errore nel caricamento del file JSON");
+		return await data.json();
+	} catch (e) {
+		console.error("Error:", e);
+	}
+}
+
+(async () => {
+	const urlParams = new URLSearchParams(window.location.search);
+	quiz.start(
+		await getQuestions(),
+		urlParams.get("questions"),
+		urlParams.get("difficulty"),
+	);
+})();
