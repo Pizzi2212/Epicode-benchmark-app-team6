@@ -211,7 +211,7 @@ const result = {
 				},
 				plugins: {
 					datalabels: {
-						display: false, // nasconde le etichette sui segmenti
+						display: false,
 					},
 				},
 			},

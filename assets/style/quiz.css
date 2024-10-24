@@ -19,8 +19,8 @@
 	height: 100%;
 	border-radius: 200rem;
 	background: conic-gradient(
-		#d20094 0%,
-		#d20094 calc(var(--percentage) * 1%),
+		#0ff 0%,
+		#0ff calc(var(--percentage) * 1%),
 		transparent 0 100%
 	);
 	display: flex;
@@ -31,9 +31,14 @@
 .time {
 	height: 9rem;
 	width: 9rem;
-	font-size: 2.4rem;
-	font-weight: bold;
-	background-color: #000;
+	font-size: 3.5rem;
+	font-weight: 400;
+	font-family: "Outfit";
+
+	background-image: url(../images/bg.jpg);
+	background-position: 160px;
+	background-color: rgba(20, 20, 20, 0.3);
+	background-blend-mode: darken;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -81,9 +86,16 @@ body > footer {
 /****************************/
 
 .question {
-	font-size: 4.8rem;
-	font-weight: 500;
+	font-size: 4.6rem;
+	font-weight: 400;
 	text-align: center;
+	font-family: "Outfit";
+	padding: 6rem 19rem 0rem 19rem;
+}
+
+.question-counter {
+	font-family: "Outfit";
+	font-weight: 500;
 }
 
 /****************************/
@@ -114,6 +126,7 @@ body > footer {
 	padding: 2.4rem;
 	color: var(--text-color);
 	font-size: var(--general-text-size);
+	font-weight: bold;
 	border: none;
 	background-color: #ffffff11;
 	border-radius: 1000px;
@@ -123,7 +136,8 @@ body > footer {
 }
 
 .btn-answer--selected {
-	background-color: #d2009499;
+	background: #d20094;
+	background: linear-gradient(180deg, #d20094 20%, #900080 75%);
 }
 
 /* RADIO */
