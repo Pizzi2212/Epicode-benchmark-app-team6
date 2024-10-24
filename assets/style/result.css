@@ -108,12 +108,14 @@
 
 .color-not-passed {
 	font-size: 2rem;
+
 	color: #d20094;
 	font-weight: 600;
 }
 
 .feedback-title {
-	font-size: 2rem;
+	padding-top: 1rem;
+	font-size: 2.1rem;
 	line-height: 2rem;
 	font-weight: 600;
 }
@@ -121,8 +123,15 @@
 .feedback-description {
 	font-size: 1.1rem;
 	line-height: 2rem;
+<<<<<<< Updated upstream
 	font-weight: 400;
 	padding-left: 47rem;
 	padding-right: 47rem;
 	padding-top: 2.5rem;
+=======
+	font-weight: 300;
+	padding-left: 48rem;
+	padding-right: 48rem;
+	padding-top: 2.2rem;
+>>>>>>> Stashed changes
 }
