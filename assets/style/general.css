@@ -41,6 +41,10 @@ strong {
 	display: none;
 }
 
+.scene.hide {
+	display: none;
+}
+
 /****************************/
 /* PAGES LAYOUT */
 /****************************/

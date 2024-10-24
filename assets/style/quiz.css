@@ -131,8 +131,8 @@ body > footer {
 .radio-container {
 	font-size: var(--general-text-size);
 	line-height: 1.1;
-	justify-self: start;
 	display: inline-flex;
+	justify-self: start;
 	align-items: center;
 }
 

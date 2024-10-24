@@ -154,8 +154,79 @@ const timer = {
 	},
 };
 
+const result = {
+	minimum: 50,
+	numberOfPoint: undefined,
+	totalQuestion: undefined,
+	correct: undefined,
+	wrong: undefined,
+	barColors: ["#D20094", "#0FF"],
+
+	htmlElements: {
+		correct: document.getElementById("correct"),
+		countCorrect: document.getElementById("count-correct"),
+		wrong: document.getElementById("wrong"),
+		countWrong: document.getElementById("count-wrong"),
+		totalQuestion: document.querySelectorAll(".total-question"),
+		chart: document.getElementById("chart"),
+		chartTextCorrect: document.querySelector(".chart-text-correct"),
+		chartTextWrong: document.querySelector(".chart-text-wrong"),
+	},
+
+	init(numberOfPoint, totalQuestion) {
+		this.correct = (numberOfPoint * 100) / totalQuestion;
+		this.wrong = 100 - this.correct;
+		this.numberOfPoint = numberOfPoint;
+		this.totalQuestion = totalQuestion;
+	},
+
+	show() {
+		this.htmlElements.countCorrect.textContent = this.numberOfPoint;
+		this.htmlElements.countWrong.textContent =
+			this.totalQuestion - this.numberOfPoint;
+		this.htmlElements.totalQuestion.forEach(
+			el => (el.textContent = this.totalQuestion),
+		);
+		this.htmlElements.correct.textContent = this.correct;
+		this.htmlElements.wrong.textContent = this.wrong;
+
+		new Chart(this.htmlElements.chart, {
+			type: "doughnut",
+			data: {
+				datasets: [
+					{
+						backgroundColor: this.barColors,
+						data: [this.wrong, this.correct],
+						borderWidth: 0,
+					},
+				],
+			},
+			options: {
+				responsive: true, // aggiunge la responsività
+				maintainAspectRatio: false, // disabilita il mantenimento del rapporto di aspetto
+				cutout: "70%", // Imposta la percentuale di taglio al 70%
+				animation: {
+					animateRotate: true, // abilita l'animazione di rotazione
+					duration: 1500, // specifica la durata dell'animazione (1.5 sec)
+				},
+				plugins: {
+					datalabels: {
+						display: false, // nasconde le etichette sui segmenti
+					},
+				},
+			},
+		});
+
+		if (this.correct > this.minimum)
+			this.htmlElements.chartTextWrong.classList.add("hide");
+		else this.htmlElements.chartTextCorrect.classList.add("hide");
+	},
+};
+
 const quiz = {
 	htmlElements: {
+		sceneQuiz: document.getElementById("scene-quiz"),
+		sceneResults: document.getElementById("scene-results"),
 		confirmButton: document.getElementById("confirm"),
 		answersContainer: document.getElementById("answers-container"),
 		question: document.getElementById("question"),
@@ -170,6 +241,7 @@ const quiz = {
 	numberOfQuestion: 5,
 	timer,
 	defaultSecond: 180,
+	result,
 
 	getRandomElements(array, numberElements) {
 		if (numberElements === 0) return [];
@@ -372,7 +444,10 @@ const quiz = {
 	},
 
 	showResult() {
-		// TODO: define how it works
+		this.htmlElements.sceneQuiz.classList.add("hide");
+		this.htmlElements.sceneResults.classList.remove("hide");
+		this.result.init(this.points, this.numberOfQuestion);
+		this.result.show();
 	},
 
 	start() {
