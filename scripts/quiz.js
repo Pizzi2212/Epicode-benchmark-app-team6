@@ -169,6 +169,7 @@ const quiz = {
 	questions: [...questions],
 	numberOfQuestion: 5,
 	timer,
+	defaultSecond: 180,
 
 	getRandomElements(array, numberElements) {
 		if (numberElements === 0) return [];
@@ -276,6 +277,7 @@ const quiz = {
 
 				case "boolean":
 					const radioContainer = document.createElement("div");
+					radioContainer.classList.add("radio-container");
 
 					const radio = document.createElement("input");
 					radio.type = "radio";
@@ -303,6 +305,19 @@ const quiz = {
 		this.htmlElements.questionCounter.innerText = this.activeQuestionIndex + 1;
 
 		this.htmlElements.question.innerHTML = this.activeQuestion.question;
+
+		this.htmlElements.answersContainer.className = "answers-container";
+		switch (this.activeQuestion.type) {
+			case "multiple":
+				this.htmlElements.answersContainer.classList.add("multiple");
+				break;
+			case "boolean":
+				this.htmlElements.answersContainer.classList.add("boolean");
+				break;
+			default:
+				break;
+		}
+
 		const getElementToDisplay = answer => {
 			switch (this.activeQuestion.type) {
 				case "multiple":
@@ -318,7 +333,7 @@ const quiz = {
 				getElementToDisplay(answer),
 			);
 		});
-		return this.activeQuestion.seconds ?? 10;
+		return this.activeQuestion.seconds ?? this.defaultSecond;
 	},
 
 	deleteActiveQuestion() {
