@@ -23,8 +23,14 @@
 		<!-- STYLE -->
 		<link rel="stylesheet" href="./assets/style/general.css" />
 		<link rel="stylesheet" href="./assets/style/quiz.css" />
+		<link rel="stylesheet" href="./assets/style/result.css" />
 
 		<!-- SCRIPT -->
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+			defer
+		></script>
 		<script type="text/javascript" src="./scripts/quiz.js" defer></script>
 	</head>
 	<body>
@@ -36,7 +42,7 @@
 			/>
 		</header>
 		<main>
-			<div class="scene-quiz">
+			<div id="scene-quiz" class="scene scene-quiz">
 				<div id="timer" class="timer">
 					<div id="circle" class="circle">
 						<span id="time" class="time">&nbsp;</span>
@@ -56,10 +62,10 @@
 					</strong>
 				</p>
 			</div>
-			<div class="scene-results hide">
+			<div id="scene-results" class="scene scene-results hide">
 				<div>
-					<h2>Results</h2>
-					<p>The summary of your answers:</p>
+					<h2 class="result-title"><em>Results</em></h2>
+					<p class="result-description">The summary of your answers:</p>
 				</div>
 				<article class="results-container">
 					<section class="answer-stat answer-stat--correct">
@@ -78,27 +84,32 @@
 						</p>
 					</section>
 					<section class="answer-graphics">
-						<div class="feedback">
+						<div>
+							<canvas
+								id="chart"
+								class="chart"
+								style="width: 100%; max-width: 80rem"
+							></canvas>
+						</div>
+
+						<div class="feedback chart-text-correct">
 							<p class="feedback-title">Congratulazions!</p>
-							<p class="is-passed is-passed--passed">You passed the exam.</p>
-							<p class="description">
+							<p class="color-passed">You passed the exam.</p>
+							<p class="feedback-description">
 								We'll send you the certificate in few minutes Check your email
 								(including promotions / spam folder)
 							</p>
 						</div>
-						<div class="feedback hide">
-							<p class="feedback-title">Congratulazions!</p>
-							<p class="is-passed is-passed--not">
-								You didn't passed the exam.
-							</p>
-							<p class="description">
-								<!-- TODO  -->
-								Try again buddy.
+						<div class="feedback chart-text-wrong">
+							<p class="feedback-title">Sorry!</p>
+							<p class="color-not-passed">You didn't passed the exam.</p>
+							<p class="feedback-description">
+								Try again, you'll do better next time! Good luck!
 							</p>
 						</div>
 					</section>
 					<section class="answer-stat answer-stat--wrong">
-						<h4>Correct</h4>
+						<h4>Wrong</h4>
 						<p>
 							<em>
 								<span id="wrong">&nbsp;</span>
@@ -114,7 +125,7 @@
 					</section>
 				</article>
 				<div>
-					<form action="">
+					<form action="review.html">
 						<button class="btn btn--hollow" type="submit">RATE US</button>
 					</form>
 				</div>
