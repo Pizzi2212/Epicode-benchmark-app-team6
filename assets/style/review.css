@@ -33,7 +33,7 @@ h2 {
 	font-size: 4rem; /* Dimensione del titolo */
 	font-weight: bold; /* Grassetto per il titolo */
 	text-align: center; /* Centra orizzontalmente */
-	margin-bottom: 1rem; /* Spazio sotto il titolo */
+	margin-bottom: 3rem; /* Spazio sotto il titolo */
 }
 
 /* Stile per il campo di commento */
@@ -76,4 +76,6 @@ button:hover {
 p {
 	text-align: center; /* Centro del testo */
 	font-size: 2rem; /* Dimensione del font */
+	margin-top: 5rem;
+	margin-top: 5rem;
 }
