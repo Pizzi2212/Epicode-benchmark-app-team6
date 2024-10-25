@@ -63,7 +63,7 @@
 	-webkit-appearance: none;
 	appearance: none;
 	background-color: transparent;
-	color: currentColor;
+	color: var(--text-color);
 	width: var(--general-text-size);
 	height: var(--general-text-size);
 	border: 2px solid currentColor;

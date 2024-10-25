@@ -1,3 +1,7 @@
+:root {
+	--thumb-color: #0f0;
+}
+
 dialog {
 	inset: 0;
 	margin: auto;
@@ -37,6 +41,64 @@ dialog {
 
 .settings label {
 	color: #fff;
+}
+
+/* DIFFICULTY */
+
+.easy {
+	color: #0f0;
+}
+
+.medium {
+	color: #ff0;
+}
+
+.hard {
+	color: #f00;
+}
+
+.all {
+	color: #fff;
+}
+
+#difficulty {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 10px;
+	border-radius: 5px;
+	outline: none;
+	transition: background 300ms;
+}
+
+#difficulty::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	background-color: var(--thumb-color);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#difficulty::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	background-color: var(--thumb-color);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+/* Posizionamento dello ::after sullo slider in base al valore */
+input[type="range"] {
+	position: relative;
+}
+
+#all-wapper {
+	grid-column: 2;
+	margin-bottom: 2rem;
 }
 
 .wrapper button {
