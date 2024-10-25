@@ -1,0 +1,1464 @@
+[
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "What does <em>HTML</em> stand for?",
+		"correct_answers": ["HyperText Markup Language"],
+		"incorrect_answers": [
+			"Hyperlinks Text Mark Language",
+			"Hyperlinking Text Markdown Language",
+			"Hyper Tool Markup Language"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 25,
+		"type": "boolean",
+		"difficulty": "easy",
+		"question": "<em>RAM</em> stands for Random Access Memory.",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "What is the main function of the <em>GPU</em>?",
+		"correct_answers": ["Rendering graphics"],
+		"incorrect_answers": [
+			"Storing memory",
+			"Executing program instructions",
+			"Networking"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 25,
+		"type": "boolean",
+		"difficulty": "easy",
+		"question": "<em>Python</em> is a snake species as well as a programming language.",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "In web development, <em>CSS</em> stands for what?",
+		"correct_answers": ["Cascading Style Sheets"],
+		"incorrect_answers": [
+			"Creative Style Sheets",
+			"Computer Style Sheets",
+			"Colorful Style Sheets"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What does <em>CPU</em> stand for?",
+		"correct_answers": ["Central Processing Unit"],
+		"incorrect_answers": [
+			"Central Process Unit",
+			"Computer Personal Unit",
+			"Central Processor Unit"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "boolean",
+		"difficulty": "medium",
+		"question": "The logo for <em>Snapchat</em> is a Bell.",
+		"correct_answers": ["False"],
+		"incorrect_answers": ["True"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which company developed the <em>Java</em> programming language?",
+		"correct_answers": ["Sun Microsystems"],
+		"incorrect_answers": ["Microsoft", "Apple", "Google"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "boolean",
+		"difficulty": "medium",
+		"question": "<em>Linux</em> is based on <em>Unix</em>.",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In what year was the <em>Python</em> programming language released?",
+		"correct_answers": ["1991"],
+		"incorrect_answers": ["1989", "2000", "1995"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the time complexity of binary search in <em>Big O</em> notation?",
+		"correct_answers": ["O(log n)"],
+		"incorrect_answers": ["O(n log n)", "O(n^2)", "O(1)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In <em>C++</em>, which keyword is used to define a constant variable?",
+		"correct_answers": ["const"],
+		"incorrect_answers": ["constant", "define", "static"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In computer science, <em>Alan Turing</em> is known for what major contribution?",
+		"correct_answers": ["Founding the field of artificial intelligence"],
+		"incorrect_answers": [
+			"Inventing the modern computer",
+			"Developing binary code",
+			"Creating the internet"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What does the acronym <em>BIOS</em> stand for?",
+		"correct_answers": ["Basic Input Output System"],
+		"incorrect_answers": [
+			"Binary Integrated Operating System",
+			"Basic Information Operating System",
+			"Basic Internal Operating Structure"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following programming languages is <em>functional</em>?",
+		"correct_answers": ["Haskell"],
+		"incorrect_answers": ["C", "Java", "Assembly"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What is the result of <em>2^10</em> (2 raised to the power of 10)?",
+		"correct_answers": ["1024"],
+		"incorrect_answers": ["1000", "512", "2048"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which programming language is commonly used for <em>iOS</em> app development?",
+		"correct_answers": ["Swift"],
+		"incorrect_answers": ["Java", "Python", "Kotlin"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are <em>functional programming languages</em>? (Select all that apply)",
+		"correct_answers": ["Haskell", "Lisp", "Erlang"],
+		"incorrect_answers": ["Java", "C++", "Python"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>complexity</em> of a binary search algorithm in <em>Big O</em> notation?",
+		"correct_answers": ["O(log n)"],
+		"incorrect_answers": ["O(n)", "O(n^2)", "O(1)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are <em>JavaScript</em> frameworks or libraries? (Select all that apply)",
+		"correct_answers": ["React", "Angular", "Vue.js"],
+		"incorrect_answers": ["Django", "Spring", "Ruby on Rails"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which company developed the <em>C#</em> programming language?",
+		"correct_answers": ["Microsoft"],
+		"incorrect_answers": ["Google", "Apple", "Oracle"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are methods of <em>hash collision resolution</em> in hash tables? (Select all that apply)",
+		"correct_answers": ["Chaining", "Open Addressing"],
+		"incorrect_answers": ["Direct Mapping", "Paging"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>greatest common divisor</em> (GCD) of 48 and 18?",
+		"correct_answers": ["6"],
+		"incorrect_answers": ["12", "9", "3"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is a valid <em>HTML5</em> element?",
+		"correct_answers": ["<article>"],
+		"incorrect_answers": ["<header5>", "<block>", "<content>"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In <em>SQL</em>, which of the following are <em>aggregate functions</em>? (Select all that apply)",
+		"correct_answers": ["COUNT", "SUM", "AVG"],
+		"incorrect_answers": ["JOIN", "GROUP BY", "SELECT"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What does <em>HTTP</em> stand for?",
+		"correct_answers": ["HyperText Transfer Protocol"],
+		"incorrect_answers": [
+			"HyperText Transport Protocol",
+			"Hyperlink Transfer Protocol",
+			"Hyper Transfer Text Protocol"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of these <em>data structures</em> allows <em>LIFO</em> (Last In, First Out) access?",
+		"correct_answers": ["Stack"],
+		"incorrect_answers": ["Queue", "Array", "HashMap"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following programming languages are <em>statically typed</em>? (Select all that apply)",
+		"correct_answers": ["Java", "C++", "Go"],
+		"incorrect_answers": ["Python", "Ruby", "JavaScript"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What is the <em>primary</em> purpose of an <em>operating system</em>?",
+		"correct_answers": ["Managing hardware and software resources"],
+		"incorrect_answers": [
+			"Compiling programs",
+			"Developing applications",
+			"Networking"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>space complexity</em> of a merge sort?",
+		"correct_answers": ["O(n)"],
+		"incorrect_answers": ["O(log n)", "O(1)", "O(n log n)"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What is the binary representation of <em>10</em>?",
+		"correct_answers": ["1010"],
+		"incorrect_answers": ["1101", "1001", "1011"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is a valid <em>CSS</em> property?",
+		"correct_answers": ["font-size"],
+		"incorrect_answers": ["text-weight", "style-border", "background-opacity"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In <em>C++</em>, what keyword is used to define a constant variable?",
+		"correct_answers": ["const"],
+		"incorrect_answers": ["constant", "static", "let"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are types of <em>memory management</em> in programming? (Select all that apply)",
+		"correct_answers": ["Garbage Collection", "Manual Memory Allocation"],
+		"incorrect_answers": ["Automated Paging", "Virtualization"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following file formats are used for <em>lossless compression</em>? (Select all that apply)",
+		"correct_answers": ["PNG", "FLAC", "ZIP"],
+		"incorrect_answers": ["MP3", "JPEG", "GIF"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of these are components of the <em>TCP/IP</em> model? (Select all that apply)",
+		"correct_answers": [
+			"Transport Layer",
+			"Internet Layer",
+			"Application Layer"
+		],
+		"incorrect_answers": ["Session Layer", "Presentation Layer"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are types of <em>join</em> in SQL? (Select all that apply)",
+		"correct_answers": ["Inner Join", "Left Join", "Full Outer Join"],
+		"incorrect_answers": ["Horizontal Join", "Cartesian Join"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What is the <em>time complexity</em> of a binary search algorithm?",
+		"correct_answers": ["O(log n)"],
+		"incorrect_answers": ["O(n)", "O(n^2)", "O(1)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following are <em>primitive data types</em> in <em>Java</em>? (Select all that apply)",
+		"correct_answers": ["int", "boolean", "char"],
+		"incorrect_answers": ["String", "List", "HashMap"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the result of <em>Σ</em> (summation) from i=1 to 100 of i (Σi from 1 to 100)?",
+		"correct_answers": ["5050"],
+		"incorrect_answers": ["5000", "5055", "5005"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which keyword is used to declare a <em>constant</em> in <em>C++</em>?",
+		"correct_answers": ["const"],
+		"incorrect_answers": ["final", "let", "static"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In <em>Python</em>, which of the following are used to define a <em>list</em>? (Select all that apply)",
+		"correct_answers": ["[]", "list()"],
+		"incorrect_answers": ["{}", "tuple()", "()"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "What does <em>SQL</em> stand for?",
+		"correct_answers": ["Structured Query Language"],
+		"incorrect_answers": [
+			"Sequential Query Language",
+			"Standard Query Language",
+			"Simplified Query Language"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>Big O</em> notation for <em>merge sort</em>?",
+		"correct_answers": ["O(n log n)"],
+		"incorrect_answers": ["O(n^2)", "O(log n)", "O(n)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are used in <em>asymptotic notation</em>? (Select all that apply)",
+		"correct_answers": ["O(n)", "Ω(n)", "Θ(n)"],
+		"incorrect_answers": ["Δ(n)", "μ(n)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which operator is used for <em>exponentiation</em> in <em>Python</em>?",
+		"correct_answers": ["**"],
+		"incorrect_answers": ["^", "//", "^^"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>derivative</em> of <em>sin(x)</em> with respect to <em>x</em>?",
+		"correct_answers": ["cos(x)"],
+		"incorrect_answers": ["-sin(x)", "tan(x)", "-cos(x)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of these languages support <em>functional programming</em>? (Select all that apply)",
+		"correct_answers": ["Haskell", "Lisp", "Scala"],
+		"incorrect_answers": ["C#", "C++", "Ruby"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which <em>Python</em> built-in function returns the length of an object?",
+		"correct_answers": ["len()"],
+		"incorrect_answers": ["length()", "size()", "count()"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What does <em>Git</em> primarily manage?",
+		"correct_answers": ["Version Control"],
+		"incorrect_answers": ["Database Management", "Networking", "Security"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which data type is <em>immutable</em> in Python?",
+		"correct_answers": ["tuple"],
+		"incorrect_answers": ["list", "dict", "set"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of these languages are <em>statically typed</em>? (Select all that apply)",
+		"correct_answers": ["Java", "C++", "Go"],
+		"incorrect_answers": ["Python", "JavaScript", "Ruby"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>time complexity</em> of matrix multiplication for two <em>n x n</em> matrices?",
+		"correct_answers": ["O(n^3)"],
+		"incorrect_answers": ["O(n^2)", "O(n^2 log n)", "O(n^4)"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following algorithms are used for <em>encryption</em>? (Select all that apply)",
+		"correct_answers": ["RSA", "AES", "Blowfish"],
+		"incorrect_answers": ["SHA-256", "MD5", "CRC32"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following are <em>floating-point</em> numbers?",
+		"correct_answers": ["3.14", "-0.001", "2.0"],
+		"incorrect_answers": ["10", "100", "-5"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In set theory, what is the <em>intersection</em> of two sets <em>A</em> and <em>B</em>?",
+		"correct_answers": ["The elements common to both A and B"],
+		"incorrect_answers": [
+			"The elements of A or B",
+			"The union of A and B",
+			"The difference between A and B"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which sorting algorithms are <em>comparison-based</em>? (Select all that apply)",
+		"correct_answers": ["Quick Sort", "Merge Sort", "Bubble Sort"],
+		"incorrect_answers": ["Counting Sort", "Radix Sort"]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>integral</em> of <em>e^x</em> with respect to <em>x</em>?",
+		"correct_answers": ["e^x + C"],
+		"incorrect_answers": ["e^x", "x * e^x", "ln(x) + C"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 35,
+		"type": "boolean",
+		"difficulty": "easy",
+		"question": "In Python, <em>indentation</em> is used to define code blocks.",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following statements are true about <em>recursion</em>? (Select all that apply)",
+		"correct_answers": [
+			"A function calls itself",
+			"There is a base case to terminate recursion"
+		],
+		"incorrect_answers": [
+			"It is always faster than iteration",
+			"It can run indefinitely"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What does <em>DOM</em> stand for in web development?",
+		"correct_answers": ["Document Object Model"],
+		"incorrect_answers": [
+			"Data Object Model",
+			"Dynamic Object Module",
+			"Document Overload Model"
+		]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>determinant</em> of the following matrix? [[1, 2], [3, 4]]",
+		"correct_answers": ["-2"],
+		"incorrect_answers": ["2", "1", "0"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of these are <em>high-level programming languages</em>? (Select all that apply)",
+		"correct_answers": ["Python", "Java", "C#"],
+		"incorrect_answers": ["Assembly", "C", "Fortran"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What is the purpose of <em>REST</em> in web development?",
+		"correct_answers": ["To define architectural principles for web services"],
+		"incorrect_answers": [
+			"To handle state transitions",
+			"To store user data",
+			"To format data"
+		]
+	},
+	{
+		"category": "Mathematics",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the <em>Fibonacci</em> number at position 10?",
+		"correct_answers": ["55"],
+		"incorrect_answers": ["34", "21", "89"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which HTML tag is used to define a <em>hyperlink</em>?",
+		"correct_answers": ["<a>"],
+		"incorrect_answers": ["<link>", "<href>", "<anchor>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following CSS properties is used to <em>center</em> text horizontally?",
+		"correct_answers": ["text-align"],
+		"incorrect_answers": ["align-items", "justify-content", "vertical-align"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "boolean",
+		"difficulty": "easy",
+		"question": "In CSS, <em>color</em> property is used to set the text color.",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In JavaScript, what is the correct syntax to <em>declare a variable</em>?",
+		"correct_answers": ["let myVar;"],
+		"incorrect_answers": ["variable myVar;", "var = myVar;", "declare myVar;"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which HTML element is used to define <em>bold text</em>?",
+		"correct_answers": ["<strong>", "<b>"],
+		"incorrect_answers": ["<em>", "<bold>", "<strong-text>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What is the correct CSS syntax to <em>select all elements</em> with class 'container'?",
+		"correct_answers": [".container"],
+		"incorrect_answers": ["#container", "container", "class=container"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "What is the purpose of the <em>DOCTYPE</em> declaration in HTML?",
+		"correct_answers": ["To specify the document type and version of HTML"],
+		"incorrect_answers": [
+			"To include external files",
+			"To link CSS stylesheets",
+			"To define a form"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following JavaScript methods can be used to <em>convert a string</em> to an integer?",
+		"correct_answers": ["parseInt()"],
+		"incorrect_answers": ["toString()", "Number()", "parseFloat()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In CSS, which property is used to set the <em>background color</em> of an element?",
+		"correct_answers": ["background-color"],
+		"incorrect_answers": ["color", "background", "bg-color"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which HTML attribute is used to define <em>alternative text</em> for an image?",
+		"correct_answers": ["alt"],
+		"incorrect_answers": ["src", "title", "desc"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property is used to create <em>space between elements</em>?",
+		"correct_answers": ["margin"],
+		"incorrect_answers": ["padding", "border", "width"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which JavaScript event is triggered when an <em>HTML form</em> is submitted?",
+		"correct_answers": ["submit"],
+		"incorrect_answers": ["click", "change", "keydown"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following is correct regarding <em>CSS Flexbox</em>? (Select all that apply)",
+		"correct_answers": [
+			"justify-content: center; aligns items horizontally",
+			"align-items: center; aligns items vertically"
+		],
+		"incorrect_answers": [
+			"flex-wrap: column; wraps items into columns",
+			"flex-direction: column; aligns items horizontally"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "What is the default value of the <em>position</em> property in CSS?",
+		"correct_answers": ["static"],
+		"incorrect_answers": ["relative", "absolute", "fixed"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is the correct way to insert a <em>JavaScript</em> file into an HTML document?",
+		"correct_answers": ["<script src='file.js'></script>"],
+		"incorrect_answers": [
+			"<js src='file.js'></js>",
+			"<javascript src='file.js'></javascript>",
+			"<script href='file.js'></script>"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the difference between <em>let</em> and <em>var</em> in JavaScript?",
+		"correct_answers": ["let is block-scoped", "var is function-scoped"],
+		"incorrect_answers": ["var is block-scoped", "let is function-scoped"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property is used to <em>make text italic</em>?",
+		"correct_answers": ["font-style"],
+		"incorrect_answers": ["font-weight", "text-decoration", "font-family"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is a valid <em>CSS selector</em> to target an element by ID?",
+		"correct_answers": ["#myElement"],
+		"incorrect_answers": [".myElement", "myElement", "@myElement"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is a valid <em>HTML5</em> element?",
+		"correct_answers": ["<section>"],
+		"incorrect_answers": ["<div5>", "<part>", "<block>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which method is used to <em>add an event listener</em> to an HTML element in JavaScript?",
+		"correct_answers": ["addEventListener()"],
+		"incorrect_answers": ["attachEvent()", "bindEvent()", "setEvent()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "What is the correct HTML tag for inserting a <em>line break</em>?",
+		"correct_answers": ["<br>"],
+		"incorrect_answers": ["<break>", "<lb>", "<newline>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "What does the <em>alt</em> attribute in the <em>img</em> tag define?",
+		"correct_answers": ["Alternative text for an image"],
+		"incorrect_answers": ["Image source", "Image title", "Image format"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 55,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following are valid ways to <em>select multiple elements</em> in CSS? (Select all that apply)",
+		"correct_answers": ["p, h1", ".classA, .classB", "#id1, #id2"],
+		"incorrect_answers": ["p h1", "div + p", "h1"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which property is used in JavaScript to change the content of an HTML element?",
+		"correct_answers": ["innerHTML"],
+		"incorrect_answers": ["value", "innerText", "textContent"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which tag is used to create a line break in HTML?",
+		"correct_answers": ["<br>"],
+		"incorrect_answers": ["<hr>", "<div>", "<p>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 25,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which HTML attribute is used to define inline styles?",
+		"correct_answers": ["style"],
+		"incorrect_answers": ["class", "id", "link"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which JavaScript keyword is used to declare a variable?",
+		"correct_answers": ["var"],
+		"incorrect_answers": ["let", "def", "declare"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which HTML element is used to display the largest heading?",
+		"correct_answers": ["<h1>"],
+		"incorrect_answers": ["<h6>", "<header>", "<head>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which of the following is used to link a JavaScript file to an HTML file?",
+		"correct_answers": ["<script>"],
+		"incorrect_answers": ["<link>", "<a>", "<meta>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which HTML attribute specifies alternative text for an image if the image cannot be displayed?",
+		"correct_answers": ["alt"],
+		"incorrect_answers": ["title", "src", "description"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which of the following is used to style a web page?",
+		"correct_answers": ["CSS"],
+		"incorrect_answers": ["HTML", "JavaScript", "PHP"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which tag is used to define a form in HTML?",
+		"correct_answers": ["<form>"],
+		"incorrect_answers": ["<input>", "<div>", "<section>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which of the following elements is used to create a table row in HTML?",
+		"correct_answers": ["<tr>"],
+		"incorrect_answers": ["<td>", "<th>", "<table>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 25,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which protocol is used for secure communication over the internet?",
+		"correct_answers": ["HTTPS"],
+		"incorrect_answers": ["HTTP", "FTP", "SSH"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which property is used to change the text color in CSS?",
+		"correct_answers": ["color"],
+		"incorrect_answers": ["text-color", "font-color", "background-color"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 35,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which method is used to print a message in the browser console in JavaScript?",
+		"correct_answers": ["console.log()"],
+		"incorrect_answers": ["print()", "log()", "alert()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Which tag is used to define a hyperlink destination?",
+		"correct_answers": ["href"],
+		"incorrect_answers": ["src", "target", "action"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property is used to create space between the content of an element and its border?",
+		"correct_answers": ["padding"],
+		"incorrect_answers": ["margin", "border-spacing", "spacing"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is NOT a JavaScript framework?",
+		"correct_answers": ["Django"],
+		"incorrect_answers": ["React", "Vue", "Angular"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which HTML attribute is used to define the relationship between a linked document and the current document?",
+		"correct_answers": ["rel"],
+		"incorrect_answers": ["href", "src", "link"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In JavaScript, which method is used to create a new array by applying a function to each element of an existing array?",
+		"correct_answers": ["map()"],
+		"incorrect_answers": ["forEach()", "filter()", "reduce()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property controls the horizontal alignment of block-level elements?",
+		"correct_answers": ["margin"],
+		"incorrect_answers": ["text-align", "float", "display"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which HTML element is used to embed JavaScript code directly into an HTML document?",
+		"correct_answers": ["<script>"],
+		"incorrect_answers": ["<style>", "<meta>", "<link>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which event is triggered when an HTML element is clicked in JavaScript?",
+		"correct_answers": ["click"],
+		"incorrect_answers": ["hover", "mouseover", "onload"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property is used to control the stacking order of elements that overlap?",
+		"correct_answers": ["z-index"],
+		"incorrect_answers": ["position", "order", "display"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 40,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following methods is used to remove the last element from an array in JavaScript?",
+		"correct_answers": ["pop()"],
+		"incorrect_answers": ["shift()", "remove()", "slice()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which tag is used to define metadata about an HTML document?",
+		"correct_answers": ["<meta>"],
+		"incorrect_answers": ["<link>", "<head>", "<title>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is a pseudo-class in CSS?",
+		"correct_answers": [":hover"],
+		"incorrect_answers": ["::before", "focus", ":link"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which property is used to change the size of the text in CSS?",
+		"correct_answers": ["font-size"],
+		"incorrect_answers": ["text-size", "font-style", "text-style"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which HTML tag is used to display an image?",
+		"correct_answers": ["<img>"],
+		"incorrect_answers": ["<pic>", "<image>", "<src>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In JavaScript, what keyword is used to declare a constant?",
+		"correct_answers": ["const"],
+		"incorrect_answers": ["let", "constant", "var"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following operators is used to check for strict equality in JavaScript?",
+		"correct_answers": ["==="],
+		"incorrect_answers": ["==", "!==", "="]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following is true about event delegation in JavaScript? (Select all that apply)",
+		"correct_answers": [
+			"It allows attaching a single event listener to a parent element",
+			"Events propagate from children to parent elements"
+		],
+		"incorrect_answers": [
+			"Event delegation only works with 'click' events",
+			"It improves performance by removing all event listeners from child elements"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 65,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following is correct about JavaScript closures?",
+		"correct_answers": [
+			"A closure gives access to an outer function’s scope from an inner function"
+		],
+		"incorrect_answers": [
+			"Closures are created only with 'this' keyword",
+			"Closures are unique to synchronous code",
+			"Closures prevent memory leaks in JavaScript"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 60,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What does the term 'hoisting' refer to in JavaScript?",
+		"correct_answers": [
+			"Hoisting refers to the process where function and variable declarations are moved to the top of their containing scope"
+		],
+		"incorrect_answers": [
+			"Hoisting is when the variable's scope is lifted to the global scope",
+			"Hoisting happens only for functions, not variables",
+			"Hoisting means assigning a value before declaring a variable"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 70,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following is true about the CSS 'grid' layout system? (Select all that apply)",
+		"correct_answers": [
+			"The 'grid-template-columns' property defines the number and size of columns",
+			"The 'grid-area' property assigns a grid item to a grid area"
+		],
+		"incorrect_answers": [
+			"'grid-gap' is used to set the spacing between grid cells horizontally",
+			"'grid-auto-flow' defines how grid items are aligned within a grid"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 75,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following correctly describes the CSS 'box-sizing' property?",
+		"correct_answers": [
+			"'box-sizing: border-box' makes padding and border included in an element's total width and height"
+		],
+		"incorrect_answers": [
+			"'box-sizing: content-box' includes padding and border outside the width/height",
+			"'box-sizing' affects only the padding of an element",
+			"'box-sizing' determines the display property of an element"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 70,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following correctly describes the event loop in JavaScript?",
+		"correct_answers": [
+			"The event loop allows asynchronous code to be executed after synchronous code"
+		],
+		"incorrect_answers": [
+			"The event loop executes code in the call stack directly",
+			"The event loop is part of JavaScript's garbage collection system",
+			"The event loop pauses execution for every asynchronous operation"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 75,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In JavaScript, what is the difference between 'call()' and 'apply()' methods?",
+		"correct_answers": [
+			"'call()' accepts individual arguments, while 'apply()' accepts an array of arguments"
+		],
+		"incorrect_answers": [
+			"'call()' is used for synchronous functions, and 'apply()' for asynchronous",
+			"'apply()' allows for binding 'this', while 'call()' does not",
+			"'apply()' is faster than 'call()'"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which JavaScript method is used to combine two or more arrays?",
+		"correct_answers": ["concat()"],
+		"incorrect_answers": ["merge()", "join()", "append()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property is used to make text bold?",
+		"correct_answers": ["font-weight"],
+		"incorrect_answers": ["text-style", "font-style", "font-bold"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In CSS, which of the following units is relative to the font size of the element?",
+		"correct_answers": ["em"],
+		"incorrect_answers": ["px", "pt", "%"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In JavaScript, which keyword is used to check if a property exists in an object?",
+		"correct_answers": ["in"],
+		"incorrect_answers": ["hasOwnProperty", "contains", "exists"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which HTTP method is used to update an existing resource on the server?",
+		"correct_answers": ["PUT"],
+		"incorrect_answers": ["POST", "GET", "DELETE"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "In CSS, what does the 'vw' unit represent?",
+		"correct_answers": ["Viewport width"],
+		"incorrect_answers": ["Vertical width", "Viewable window", "Virtual width"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which JavaScript array method creates a new array with elements that pass a test provided by a function?",
+		"correct_answers": ["filter()"],
+		"incorrect_answers": ["map()", "reduce()", "find()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 45,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which of the following is NOT a semantic HTML5 element?",
+		"correct_answers": ["<span>"],
+		"incorrect_answers": ["<article>", "<section>", "<nav>"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which CSS property is used to set the transparency of an element?",
+		"correct_answers": ["opacity"],
+		"incorrect_answers": ["visibility", "display", "filter"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 50,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Which JavaScript function can be used to parse a string into a number?",
+		"correct_answers": ["parseInt()"],
+		"incorrect_answers": ["toString()", "Number()", "parseFloat()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 65,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the difference between '=='' and '===' in JavaScript?",
+		"correct_answers": [
+			"'===' checks both value and type, while '==' only checks value"
+		],
+		"incorrect_answers": [
+			"They are functionally the same",
+			"'==' checks both type and value",
+			"'===' is used only for objects"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 75,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following is true about the 'defer' attribute in a <script> tag?",
+		"correct_answers": [
+			"It defers the execution of the script until the HTML is fully parsed"
+		],
+		"incorrect_answers": [
+			"It loads the script immediately but executes it after DOMContentLoaded",
+			"It executes the script before the HTML is parsed",
+			"It prevents the script from executing"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 70,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In JavaScript, what does the 'bind()' method do?",
+		"correct_answers": [
+			"It creates a new function with a specific 'this' context"
+		],
+		"incorrect_answers": [
+			"It binds a value to a variable",
+			"It binds two functions together",
+			"It forces asynchronous code to run synchronously"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 75,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following best describes 'RESTful' web services?",
+		"correct_answers": [
+			"RESTful services are stateless and use standard HTTP methods like GET, POST, PUT, DELETE"
+		],
+		"incorrect_answers": [
+			"RESTful services are stateful",
+			"They always require XML for data transmission",
+			"RESTful services do not use HTTP status codes"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 80,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In CSS, how can the 'calc()' function be used?",
+		"correct_answers": ["To perform calculations for CSS property values"],
+		"incorrect_answers": [
+			"To calculate the number of elements in a container",
+			"To calculate the viewport size",
+			"To apply transformations to an element"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 65,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following best describes 'promises' in JavaScript?",
+		"correct_answers": [
+			"Promises represent the eventual completion or failure of an asynchronous operation"
+		],
+		"incorrect_answers": [
+			"Promises guarantee synchronous execution",
+			"Promises handle only errors",
+			"Promises are used for object inheritance"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 75,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "In JavaScript, which of the following methods allows you to copy an object by value?",
+		"correct_answers": ["Object.assign()"],
+		"incorrect_answers": ["Object.clone()", "Object.copy()", "Object.create()"]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 80,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following describes the 'box model' in CSS?",
+		"correct_answers": [
+			"The box model includes content, padding, border, and margin"
+		],
+		"incorrect_answers": [
+			"The box model includes only content and margin",
+			"The box model includes only padding and content",
+			"The box model applies only to block elements"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 70,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which of the following correctly defines 'CORS' (Cross-Origin Resource Sharing)?",
+		"correct_answers": [
+			"CORS is a mechanism that allows restricted resources on a web page to be requested from another domain"
+		],
+		"incorrect_answers": [
+			"CORS is a method to prevent requests from reaching a server",
+			"CORS is used to optimize CSS and JavaScript files",
+			"CORS refers to cookie-sharing between different domains"
+		]
+	},
+	{
+		"category": "Web Development",
+		"seconds": 75,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "What is the purpose of the 'async' attribute in a <script> tag?",
+		"correct_answers": [
+			"The 'async' attribute allows the script to be executed asynchronously as soon as it is downloaded"
+		],
+		"incorrect_answers": [
+			"It prevents the script from being executed until the page is fully loaded",
+			"It causes the script to load synchronously",
+			"It is only used in combination with the 'defer' attribute"
+		]
+	}
+]

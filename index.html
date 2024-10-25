@@ -24,6 +24,9 @@
 		<!-- STYLE -->
 		<link rel="stylesheet" href="./assets/style/general.css" />
 		<link rel="stylesheet" href="./assets/style/index.css" />
+		<link rel="stylesheet" href="./assets/style/popup.css" />
+
+		<script type="text/javascript" src="./scripts/index.js" defer></script>
 	</head>
 	<body>
 		<header>
@@ -63,7 +66,7 @@
 						<em>0-5 minutes.</em>
 					</li>
 				</ul>
-				<form action="quiz.html" class="proceed-form">
+				<form id="proceed-form" class="proceed-form">
 					<div class="checkbox-container">
 						<input
 							class="checkbox"
@@ -81,5 +84,37 @@
 			</div>
 		</main>
 		<footer>&nbsp;</footer>
+		<dialog id="popup">
+			<div class="wrapper">
+				<button class="close">
+					<svg viewBox="0 -960 960 960">
+						<path
+							d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+						/>
+					</svg>
+				</button>
+				<form class="settings" id="settings">
+					<label id="difficulty-label" for="difficulty">Easy</label>
+					<input
+						id="difficulty"
+						type="range"
+						value="5"
+						min="0"
+						max="5"
+						step="1"
+					/>
+					<label for="questions">Easy</label>
+					<input
+						id="questions"
+						type="range"
+						value="5"
+						min="0"
+						max="5"
+						step="1"
+					/>
+					<button type="submit"></button>
+				</form>
+			</div>
+		</dialog>
 	</body>
 </html>

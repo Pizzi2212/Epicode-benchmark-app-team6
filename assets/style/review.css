@@ -1,6 +1,14 @@
 /****************************/
 /* STAR RATING */
 /****************************/
+body {
+	font-family: "Outfit";
+}
+
+main {
+	padding-left: 20rem;
+	padding-right: 20rem;
+}
 
 .star-rating {
 	display: flex; /* Disposizione flessibile per le stelle */
@@ -8,32 +16,32 @@
 	align-items: center; /* Allinea le stelle verticalmente al centro */
 	justify-content: center; /* Centra le stelle orizzontalmente */
 	gap: 10px; /* Spaziatura tra le stelle */
-	margin: 2rem 0; /* Margine sopra e sotto */
+	padding-top: 2rem;
+	padding-bottom: 6rem;
 }
 
 .star {
-	height: 4.5rem; /* Altezza delle stelle */
-	width: 4.5rem; /* Larghezza delle stelle */
-	fill: black; /* Colore di base delle stelle */
+	height: 5.5rem; /* Altezza delle stelle */
+	width: 5.5rem; /* Larghezza delle stelle */
+	fill: rgba(0, 0, 0, 0.45); /* Colore di base delle stelle */
 	transition: fill 0.3s; /* Transizione per il colore */
 	cursor: pointer; /* Mostra il cursore a mano quando si passa sopra */
 }
 
 /* Stelle selezionate e al passaggio del mouse */
 .star--checked {
-	fill: aqua; /* Colore per le stelle selezionate */
+	fill: #00ffff; /* Colore per le stelle selezionate */
 }
 
 .star--hover {
-	fill: aqua; /* Colore al passaggio del mouse */
+	fill: #00ffff; /* Colore al passaggio del mouse */
 }
 
 /* Titolo del modulo */
 h2 {
-	font-size: 4rem; /* Dimensione del titolo */
+	font-size: 5.5rem; /* Dimensione del titolo */
 	font-weight: bold; /* Grassetto per il titolo */
 	text-align: center; /* Centra orizzontalmente */
-	margin-bottom: 3rem; /* Spazio sotto il titolo */
 }
 
 /* Stile per il campo di commento */
@@ -42,40 +50,38 @@ h2 {
 	border: none; /* Rimuovi il bordo */
 	width: 100%; /* Assicurati che si estenda completamente */
 	resize: none; /* Disabilita il ridimensionamento */
-	padding: 10px; /* Padding per il contenuto */
-	margin-bottom: 5rem; /* Spazio sotto il textarea */
-	border-bottom: 2px solid fuchsia; /* Linea fucsia in basso nell'area di input */
-	box-shadow: none; /* Rimuovi eventuali ombre */
-	color: white;
+	margin-bottom: 5rem;
+	border-bottom: 2px solid #900080; /* Linea fucsia in basso nell'area di input */
+	outline: none;
+	caret-color: #d20094;
+	color: var(--text-color);
+	opacity: 0.6;
+	font-size: 1.4rem;
+	text-indent: 0.5rem;
+	padding: 0.5rem;
+	transition: all 200ms;
+	transition-timing-function: linear;
+}
+
+.comment:focus {
+	border-bottom: 2px solid #d20094;
 }
 
 /* Stile per il pulsante */
 button {
 	display: block;
 	margin: 0 auto;
-	width: 100px;
 	justify-content: center; /* Centra il contenuto orizzontalmente */
-	background-color: aqua; /* Colore di sfondo del pulsante */
-	border: none; /* Rimuovi il bordo */
-	color: black; /* Colore del testo */
-	font-size: 1.2rem; /* Dimensione del font */
-	padding: 0.5rem 1rem; /* Padding per il pulsante */
-	cursor: pointer; /* Mostra il cursore a mano */
-	transition: background-color 0.3s; /* Transizione al passaggio del mouse */
-	width: 100%; /* Il pulsante si estende per tutta la larghezza */
 }
 .feedback {
 	margin-bottom: 5rem;
 }
 
-button:hover {
-	background-color: darkcyan; /* Colore di sfondo al passaggio del mouse */
-}
-
 /* Stile per il paragrafo */
 p {
 	text-align: center; /* Centro del testo */
-	font-size: 2rem; /* Dimensione del font */
-	margin-top: 5rem;
-	margin-top: 5rem;
+	font-size: 2.8rem; /* Dimensione del font */
+	padding-top: 2rem;
+	font-weight: 300;
+	color: var(--text-color);
 }

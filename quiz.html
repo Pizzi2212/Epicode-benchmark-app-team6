@@ -26,11 +26,7 @@
 		<link rel="stylesheet" href="./assets/style/result.css" />
 
 		<!-- SCRIPT -->
-		<script
-			type="text/javascript"
-			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
-			defer
-		></script>
+
 		<script type="text/javascript" src="./scripts/quiz.js" defer></script>
 	</head>
 	<body>
@@ -54,7 +50,7 @@
 					CONFIRM
 				</button>
 				<p class="question-counter">
-					Question
+					QUESTION
 					<span id="question-counter">&nbsp;</span>
 					<strong>
 						/
@@ -93,16 +89,21 @@
 						</div>
 
 						<div class="feedback chart-text-correct">
-							<p class="feedback-title">Congratulazions!</p>
+							<p class="feedback-title">Congratulations!</p>
 							<p class="color-passed">You passed the exam.</p>
 							<p class="feedback-description">
-								We'll send you the certificate in few minutes Check your email
-								(including promotions / spam folder)
+								We'll send you the certificate
+								<br />
+								in few minutes
+								<br />
+								Check your email (including
+								<br />
+								promotions / spam folder)
 							</p>
 						</div>
 						<div class="feedback chart-text-wrong">
 							<p class="feedback-title">Sorry!</p>
-							<p class="color-not-passed">You didn't passed the exam.</p>
+							<p class="color-not-passed">You didn't pass the exam.</p>
 							<p class="feedback-description">
 								Try again, you'll do better next time! Good luck!
 							</p>
@@ -132,5 +133,14 @@
 			</div>
 		</main>
 		<footer>&nbsp;</footer>
+		<script
+			type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"
+			defer
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"
+			defer
+		></script>
 	</body>
 </html>

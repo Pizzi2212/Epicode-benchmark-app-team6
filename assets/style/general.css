@@ -4,9 +4,9 @@
 
 :root {
 	/* COLORS */
-	--text-color: #c7c7c7;
+	--text-color: #c5c5c5;
 	--em-color: #fff;
-	--accent-color: #0ff;
+	--accent-color: #00ffff;
 	--second-color: #d20094;
 	--second-color-variation: #900080;
 	/* SIZES */
@@ -80,7 +80,9 @@ body > footer {
 	width: 22rem;
 	height: 6rem;
 	font-size: 2.1rem;
-	font-weight: bold;
+	font-weight: 700;
+	font-family: "Outfit";
+	cursor: pointer;
 }
 
 .btn--fluo {
@@ -97,6 +99,14 @@ body > footer {
 
 .btn--hollow {
 	background-color: transparent;
-	border: 2px solid #fff;
+	border: 2px solid #c5c5c5;
+	color: #c5c5c5;
+	transition: all 300ms;
+	transition-timing-function: linear;
+}
+
+.btn--hollow:hover {
+	background-color: rgba(255, 255, 255, 0.15);
 	color: #fff;
+	border: 2px solid #fff;
 }
