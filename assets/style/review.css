@@ -51,7 +51,7 @@ h2 {
 	width: 100%; /* Assicurati che si estenda completamente */
 	resize: none; /* Disabilita il ridimensionamento */
 	margin-bottom: 5rem;
-	border-bottom: 2px solid #d20094; /* Linea fucsia in basso nell'area di input */
+	border-bottom: 2px solid #900080; /* Linea fucsia in basso nell'area di input */
 	outline: none;
 	caret-color: #d20094;
 	color: var(--text-color);
@@ -59,6 +59,12 @@ h2 {
 	font-size: 1.4rem;
 	text-indent: 0.5rem;
 	padding: 0.5rem;
+	transition: all 200ms;
+	transition-timing-function: linear;
+}
+
+.comment:focus {
+	border-bottom: 2px solid #d20094;
 }
 
 /* Stile per il pulsante */
