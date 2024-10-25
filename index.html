@@ -86,9 +86,32 @@
 		<footer>&nbsp;</footer>
 		<dialog id="popup">
 			<div class="wrapper">
-				<form class="" id="settings">
-					<input type="range" value="5" min="0" max="5" step="1" />
-					<input type="range" value="5" min="0" max="5" step="1" />
+				<button class="close">
+					<svg viewBox="0 -960 960 960">
+						<path
+							d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+						/>
+					</svg>
+				</button>
+				<form class="settings" id="settings">
+					<label id="difficulty-label" for="difficulty">Easy</label>
+					<input
+						id="difficulty"
+						type="range"
+						value="5"
+						min="0"
+						max="5"
+						step="1"
+					/>
+					<label for="questions">Easy</label>
+					<input
+						id="questions"
+						type="range"
+						value="5"
+						min="0"
+						max="5"
+						step="1"
+					/>
 					<button type="submit"></button>
 				</form>
 			</div>
