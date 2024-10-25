@@ -15,5 +15,4 @@ popup.addEventListener("click", e => {
 settings.addEventListener("submit", e => {
 	e.preventDefault();
 	location.href = "quiz.html?questions=10&difficulty=easy";
-	const polpetta = "sugo";
 });
