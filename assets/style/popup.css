@@ -3,11 +3,40 @@ dialog {
 	margin: auto;
 	background: transparent;
 	border: none;
+	width: 60vw;
+	height: 60vh;
 }
 
 .wrapper {
+	height: 100%;
+	width: 100%;
 	padding: 2rem;
-	background-color: #00000055;
+	background-color: #00000080;
+	position: relative;
+	padding: 8rem;
+}
+
+.close {
+	background: transparent;
+	border: none;
+	position: absolute;
+	top: 1.8rem;
+	right: 3.2rem;
+}
+
+.close svg {
+	fill: #fff;
+	width: 3.2rem;
+	height: 3.2rem;
+}
+
+.settings {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.settings label {
+	color: #fff;
 }
 
 .wrapper button {
