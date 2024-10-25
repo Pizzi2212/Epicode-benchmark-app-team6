@@ -1,19 +1,27 @@
+:root {
+	--sliders-gray-color: #c3c3c3;
+	--difficulty-slider-color: #0f0;
+	--questions-slider-color: #0f0;
+}
+
 dialog {
 	inset: 0;
 	margin: auto;
 	background: transparent;
 	border: none;
-	width: 60vw;
-	height: 60vh;
+	width: 40rem;
+	height: 25rem;
+	box-shadow: 0 15px 15px 15px #000;
 }
 
 .wrapper {
 	height: 100%;
 	width: 100%;
-	padding: 2rem;
 	background-color: #00000080;
 	position: relative;
-	padding: 8rem;
+	padding: 4rem;
+	padding-right: 4.5rem;
+	padding-top: 6.5rem;
 }
 
 .close {
@@ -32,14 +40,123 @@ dialog {
 
 .settings {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 45fr 55fr;
+	align-items: center;
+}
+
+.settings > label {
+	justify-self: end;
+	padding-right: 2.4rem;
 }
 
 .settings label {
 	color: #fff;
 }
 
-.wrapper button {
-	width: 2rem;
-	height: 2rem;
+/* DIFFICULTY */
+
+.easy {
+	color: #0f0;
+}
+
+.medium {
+	color: #ff0;
+}
+
+.hard {
+	color: #f00;
+}
+
+.all {
+	color: #fff;
+}
+
+#questions,
+#difficulty {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	height: 0.7rem;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#questions {
+	background: linear-gradient(
+		to right,
+		var(--questions-slider-color) 0%,
+		var(--questions-slider-color) 20%,
+		var(--sliders-gray-color) 20%,
+		var(--sliders-gray-color) 100%
+	);
+}
+
+#difficulty {
+	background: linear-gradient(
+		to right,
+		var(--difficulty-slider-color) 0%,
+		var(--difficulty-slider-color) 20%,
+		var(--sliders-gray-color) 20%,
+		var(--sliders-gray-color) 100%
+	);
+}
+
+#questions::-webkit-slider-thumb,
+#difficulty::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#questions::-webkit-slider-thumb {
+	background-color: var(--questions-slider-color);
+}
+
+#difficulty::-webkit-slider-thumb {
+	background-color: var(--difficulty-slider-color);
+}
+
+#questions::-moz-range-thumb,
+#difficulty::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+#questions::-moz-range-thumb {
+	background-color: var(--questions-slider-color);
+}
+
+#difficulty::-moz-range-thumb {
+	background-color: var(--difficulty-slider-color);
+}
+
+/* Posizionamento dello ::after sullo slider in base al valore */
+input[type="range"] {
+	position: relative;
+}
+
+#all-wapper {
+	grid-column: 2;
+	margin-bottom: 2rem;
+}
+
+/* BUTTON */
+
+.btn-start {
+	margin-top: 3.2rem;
+	width: 7.8rem;
+	height: 3.2rem;
+	font-weight: 700;
+	grid-column: 2;
+	justify-self: end;
+	align-self: end;
 }
