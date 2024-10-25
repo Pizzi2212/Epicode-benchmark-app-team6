@@ -6,6 +6,8 @@ const settings = document.getElementById("settings");
 const difficulty = document.getElementById("difficulty");
 const difficultyLabel = document.getElementById("difficulty-label");
 const allCheckbox = document.getElementById("all");
+const questionSlider = document.getElementById("questions");
+const questionsLabel = document.getElementById("questions-label");
 
 const getDifficultyProperties = value => {
 	const props = {
@@ -20,7 +22,7 @@ const getDifficultyProperties = value => {
 			props.color = "#0f0";
 			break;
 		case 2:
-			props.difficulty = "easy-medium";
+			props.difficulty = "easymedium";
 			props.labelText = `<span class="easy">Easy</span>-<span class="medium">Medium</span>`;
 			props.color = "#0f0";
 			break;
@@ -30,7 +32,7 @@ const getDifficultyProperties = value => {
 			props.color = "#ff0";
 			break;
 		case 4:
-			props.difficulty = "medium-hard";
+			props.difficulty = "mediumhard";
 			props.labelText = `<span class="medium">Medium</span>-<span class="hard">Hard</span>`;
 			props.color = "#ff0";
 			break;
@@ -49,6 +51,44 @@ const getDifficultyProperties = value => {
 	return props;
 };
 
+const getQuestionsProperties = value => {
+	const props = {
+		questions: undefined,
+		labelText: undefined,
+		color: undefined,
+	};
+	switch (parseInt(value)) {
+		case 1:
+			props.questions = 8;
+			props.color = "#0f0";
+			break;
+		case 2:
+			props.questions = 15;
+			props.color = "#0f0";
+			break;
+		case 3:
+			props.questions = 25;
+			props.color = "#ff0";
+			break;
+		case 0:
+		case 4:
+		default:
+			props.color = "#f00";
+			break;
+	}
+	props.labelText = `${props.questions ?? "All"}`;
+	return props;
+};
+
+const getRootProp = slider => {
+	switch (slider) {
+		case difficulty:
+			return "--difficulty-slider-color";
+		case questionSlider:
+			return "--questions-slider-color";
+	}
+};
+
 popup.addEventListener("click", e => {
 	if (!wrapper.contains(e.target)) popup.close();
 });
@@ -59,34 +99,56 @@ closeButton.addEventListener("click", () => {
 
 form.addEventListener("submit", e => {
 	e.preventDefault();
+	updateDifficulty();
+	updateQuestions();
 	popup.showModal();
 });
 
 settings.addEventListener("submit", e => {
 	e.preventDefault();
-	const questionsParameter = 5;
-	const difficultyParameter = getDifficultyProperties(
-		allCheckbox.checked ? 0 : difficulty.value,
-	).difficulty;
-	location.href = `quiz.html?questions=10&difficulty=${difficultyParameter}`;
+	const parameters = [];
+
+	const questions = getQuestionsProperties(questionSlider.value);
+	if (questions.questions) parameters.push(`questions=${questions.questions}`);
+
+	if (!allCheckbox.checked)
+		parameters.push(
+			`difficulty=${getDifficultyProperties(difficulty.value).difficulty}`,
+		);
+
+	location.href = `quiz.html?${parameters.join("&")}`;
 });
 
-const setSliderColor = (slider, color) => {
-	slider.style.background = color;
-	slider.style.setProperty("--thumb-color", color);
+const setSliderColor = ({ slider, steps }, color) => {
+	const value = parseInt(slider.value);
+	const percentage = ((value - 1) / steps) * 100;
+	slider.style.background = `linear-gradient(to right, ${color} 0%, ${color} ${percentage}%, gray ${percentage}%, gray 100%)`;
+	slider.style.setProperty(getRootProp(slider), color);
 };
 
-const updateDifficulty = () => {
+function sliderUpdateDifficulty() {
+	allCheckbox.checked = false;
+}
+
+function updateDifficulty() {
 	const difficultyProps = getDifficultyProperties(
 		allCheckbox.checked ? 0 : difficulty.value,
 	);
-	setSliderColor(difficulty, difficultyProps.color);
+	setSliderColor({ slider: difficulty, steps: 4 }, difficultyProps.color);
 	difficultyLabel.innerHTML = difficultyProps.labelText;
-};
+}
 
-difficulty.addEventListener("change", updateDifficulty);
+difficulty.addEventListener("change", () => {
+	sliderUpdateDifficulty();
+	updateDifficulty();
+});
 
 allCheckbox.addEventListener("change", updateDifficulty);
 
-// START
-updateDifficulty();
+function updateQuestions() {
+	const questionProps = getQuestionsProperties(questionSlider.value);
+	questionsLabel.innerHTML = questionProps.labelText;
+	setSliderColor({ slider: questionSlider, steps: 3 }, questionProps.color);
+}
+
+questionSlider.addEventListener("change", updateQuestions);

@@ -94,12 +94,12 @@
 					</svg>
 				</button>
 				<form class="settings" id="settings">
-					<label id="difficulty-label" for="difficulty">Easy</label>
+					<label id="difficulty-label" for="difficulty">&nbsp;</label>
 					<input
 						id="difficulty"
 						class="medium"
 						type="range"
-						value="5"
+						value="2"
 						min="1"
 						max="5"
 						step="1"
@@ -108,16 +108,16 @@
 						<input class="checkbox" type="checkbox" name="" id="all" />
 						<label class="checkbox-label" for="all">All</label>
 					</div>
-					<label for="questions">Easy</label>
+					<label for="questions" id="questions-label">&nbsp;</label>
 					<input
 						id="questions"
 						type="range"
-						value="5"
-						min="0"
-						max="5"
+						value="2"
+						min="1"
+						max="4"
 						step="1"
 					/>
-					<button type="submit"></button>
+					<button type="submit" class="btn-start btn--fluo">START</button>
 				</form>
 			</div>
 		</dialog>

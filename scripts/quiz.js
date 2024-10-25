@@ -245,6 +245,7 @@ const quiz = {
 
 	getRandomElements(array, numberElements) {
 		if (numberElements === 0) return [];
+		if (array.length === 0) return [];
 		const randomIndex = Math.floor(Math.random() * array.length);
 		return [
 			array[randomIndex],
@@ -291,17 +292,21 @@ const quiz = {
 		const filterHard = question => question.difficulty === "hard";
 		const filterEasyMedium = question =>
 			filterEasy(question) || filterMedium(question);
+		const filterMediumHard = question =>
+			filterMedium(question) || filterHard(question);
 
 		const getFilterByDifficulty = () => {
 			switch (difficulty) {
 				case "easy":
 					return filterEasy;
-				case "medium":
-					return filterMedium;
-				case "hard":
-					return filterHard;
 				case "easymedium":
 					return filterEasyMedium;
+				case "medium":
+					return filterMedium;
+				case "mediumhard":
+					return filterMediumHard;
+				case "hard":
+					return filterHard;
 				case "all":
 				default:
 					return filterAll;
@@ -309,6 +314,7 @@ const quiz = {
 		};
 
 		const availableQuestion = this.questions.filter(getFilterByDifficulty());
+		this.numberOfQuestion ??= availableQuestion.length;
 		this.activeQuestions = this.getRandomElements(
 			availableQuestion,
 			this.numberOfQuestion,
@@ -452,7 +458,7 @@ const quiz = {
 
 	start(questions, numberOfQuestion, difficulty) {
 		this.questions = questions;
-		this.numberOfQuestion = numberOfQuestion ?? 5;
+		this.numberOfQuestion = numberOfQuestion;
 		this.selectQuestions(difficulty);
 		this.htmlElements.totalQuestion.innerText = this.activeQuestions.length;
 		this.timer.setCallBack(this.timer, () => {
@@ -477,7 +483,11 @@ async function getQuestions(path) {
 
 (async () => {
 	const urlParams = new URLSearchParams(window.location.search);
-	const path = false ? "./../assets/questions.json" : "./../assets/preset.json";
+
+	const path = `./../assets/${
+		urlParams.has("preset") ? "preset" : "questions"
+	}.json`;
+
 	quiz.start(
 		await getQuestions(path),
 		urlParams.get("questions"),
