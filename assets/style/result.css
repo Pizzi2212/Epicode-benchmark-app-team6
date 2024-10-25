@@ -60,6 +60,7 @@
 .answer-stat > p:first-of-type {
 	font-size: 6.8rem;
 	line-height: 0.8;
+	margin-bottom: 0.5rem;
 }
 
 .answer-stat > p:last-of-type {
@@ -70,6 +71,10 @@
 
 .answer-stat--wrong {
 	text-align: end;
+	color: var(--text-color);
+}
+
+.answer-stat--wrong > p:first-of-type em {
 	color: var(--text-color);
 }
 
@@ -108,7 +113,6 @@
 
 .color-not-passed {
 	font-size: 2rem;
-
 	color: #d20094;
 	font-weight: 600;
 }
@@ -123,15 +127,8 @@
 .feedback-description {
 	font-size: 1.1rem;
 	line-height: 2rem;
-<<<<<<< Updated upstream
 	font-weight: 400;
 	padding-left: 47rem;
 	padding-right: 47rem;
 	padding-top: 2.5rem;
-=======
-	font-weight: 300;
-	padding-left: 48rem;
-	padding-right: 48rem;
-	padding-top: 2.2rem;
->>>>>>> Stashed changes
 }

@@ -8,6 +8,8 @@ dialog {
 .wrapper {
 	padding: 2rem;
 	background-color: #00000055;
+	display: flex;
+	flex-direction: column;
 }
 
 .wrapper button {
