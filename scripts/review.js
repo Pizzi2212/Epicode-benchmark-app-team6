@@ -67,6 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
 			stars.forEach(s => {
 				s.classList.remove("star--checked");
 			});
+
+			stars.forEach(s => {
+				s.classList.remove("star--hover");
+			});
 		}
 	});
 });

@@ -465,9 +465,9 @@ const quiz = {
 	},
 };
 
-async function getQuestions() {
+async function getQuestions(path) {
 	try {
-		const data = await fetch("./../assets/questions.json");
+		const data = await fetch(path);
 		if (!data.ok) throw new Error("Errore nel caricamento del file JSON");
 		return await data.json();
 	} catch (e) {
@@ -477,8 +477,9 @@ async function getQuestions() {
 
 (async () => {
 	const urlParams = new URLSearchParams(window.location.search);
+	const path = false ? "./../assets/questions.json" : "./../assets/preset.json";
 	quiz.start(
-		await getQuestions(),
+		await getQuestions(path),
 		urlParams.get("questions"),
 		urlParams.get("difficulty"),
 	);
