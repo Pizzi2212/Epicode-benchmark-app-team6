@@ -4,7 +4,7 @@
 		"seconds": 30,
 		"type": "multiple",
 		"difficulty": "medium",
-		"question": "With which command do you fire cannon fire on the polar bears?",
+		"question": "With which command do you fire cannons on the polar bears?",
 		"correct_answers": ["queryselectorAll"],
 		"incorrect_answers": [
 			"querySelector",
@@ -19,7 +19,7 @@
 		"seconds": 10,
 		"type": "boolean",
 		"difficulty": "easy",
-		"question": "you need to preserve polar bears when writing Javascript code",
+		"question": "You need to preserve polar bears when writing Javascript code!",
 		"correct_answers": ["True"],
 		"incorrect_answers": ["False"]
 	},
