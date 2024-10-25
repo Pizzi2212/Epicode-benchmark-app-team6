@@ -1,0 +1,53 @@
+[
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "With which command do you fire cannon fire on the polar bears?",
+		"correct_answers": ["queryselectorAll"],
+		"incorrect_answers": [
+			"querySelector",
+			"document.getElementsbyId",
+			"document.getElementsbyClassName",
+			"document.getElementsByTagName",
+			"appendChild()"
+		]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 10,
+		"type": "boolean",
+		"difficulty": "easy",
+		"question": "you need to preserve polar bears when writing Javascript code",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "How do you define someone who doesn't fire cannons at polar bears?",
+		"correct_answers": ["an excellent programmer", "WWF DEVELOPMENT"],
+		"incorrect_answers": ["An inhabitant of Lapland", "An animal lover"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 25,
+		"type": "boolean",
+		"difficulty": "easy",
+		"question": "Polar bears influence the world of programming",
+		"correct_answers": ["True"],
+		"incorrect_answers": ["False"]
+	},
+	{
+		"category": "Science: Computers",
+		"seconds": 30,
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Which animal is most at risk from cannon fire?",
+		"correct_answers": ["Polar bear"],
+		"incorrect_answers": ["Dog", "Cat", "Monkey"]
+	}
+]
